@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Ashutosh Kumar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@200;300;400;500;600;700&display=swap">
+<style>
+  :root{
+    --bg:#0f0c1a;
+    --bg-elev:#171331;
+    --bg-elev-2:#1d1840;
+    --ink:#f1eefb;
+    --ink-dim:#a79fc9;
+    --ink-faint:#6b6291;
+    --line:#241f45;
+    --line-strong:#352d5e;
+    --gold:#fbbf24;
+    --violet:#a78bfa;
+    --rose:#fb7185;
+    --font-head:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;
+    --font-body:'Manrope',ui-sans-serif,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
+    font-size:17px;line-height:1.65;overflow-x:hidden;position:relative;
+  }
+  ::selection{background:var(--gold);color:#1a1205;}
+  a{color:inherit;text-decoration:none;}
+  p{margin:0;}
+  h1,h2,h3{margin:0;letter-spacing:-.01em;text-wrap:balance;font-family:var(--font-head);}
+
+  /* ambient background: signal waves instead of circuit grid */
+  .bg-glow{
+    position:fixed;inset:0;z-index:-3;pointer-events:none;
+    background:radial-gradient(ellipse 85% 60% at 50% -10%, rgba(167,139,250,.18), rgba(0,0,0,0) 70%);
+  }
+  .bg-waves{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.8;}
+  .bg-waves path{fill:none;stroke-width:1.6;}
+  .wave-a{stroke:rgba(251,191,36,.35);stroke-dasharray:3 10;animation:waveFlow 5s linear infinite;}
+  .wave-b{stroke:rgba(167,139,250,.3);stroke-dasharray:2 8;animation:waveFlow 7s linear infinite reverse;}
+  .wave-c{stroke:rgba(251,113,133,.22);stroke-dasharray:1 6;animation:waveFlow 9s linear infinite;}
+  @keyframes waveFlow{to{stroke-dashoffset:-120;}}
+  .bg-dots{position:fixed;inset:0;z-index:-2;pointer-events:none;}
+  .bg-dots circle{animation:drift 20s ease-in-out infinite;}
+  @keyframes drift{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+  .bg-cubes{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
+  .hcube{position:absolute;width:var(--size);height:var(--size);perspective:900px;}
+  .hcube-a{top:9%;right:5%;}
+  .hcube-b{bottom:7%;left:4%;}
+  .hcube-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;}
+  .hcube-a .hcube-inner{animation:cubeSpinA 36s linear infinite;}
+  .hcube-b .hcube-inner{animation:cubeSpinB 27s linear infinite;}
+  .hface{position:absolute;inset:0;border:1px solid rgba(251,191,36,.3);background:linear-gradient(135deg, rgba(251,191,36,.06), rgba(167,139,250,.04));}
+  .f-front{transform:translateZ(var(--half));}
+  .f-back{transform:translateZ(calc(var(--half) * -1)) rotateY(180deg);}
+  .f-right{transform:rotateY(90deg) translateZ(var(--half));}
+  .f-left{transform:rotateY(-90deg) translateZ(var(--half));}
+  .f-top{transform:rotateX(90deg) translateZ(var(--half));}
+  .f-bottom{transform:rotateX(-90deg) translateZ(var(--half));}
+  @keyframes cubeSpinA{from{transform:rotateX(0deg) rotateY(0deg);}to{transform:rotateX(360deg) rotateY(360deg);}}
+  @keyframes cubeSpinB{from{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);}to{transform:rotateX(-360deg) rotateY(360deg) rotateZ(360deg);}}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+  }
+
+  .wrap{max-width:1000px;margin-inline:auto;padding-inline:clamp(18px,4vw,32px);}
+
+  nav{
+    position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+    padding-block:1.1rem;background:rgba(15,12,26,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:1000px;margin-inline:auto;width:100%;padding-inline:clamp(18px,4vw,32px);display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+  .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.02em;font-family:var(--font-head);}
+  .logo-mark{
+    width:30px;height:30px;border-radius:9px;border:1px solid var(--line-strong);
+    background:var(--bg-elev);display:flex;align-items:center;justify-content:center;
+    font-size:.7rem;font-weight:700;color:var(--gold);
+  }
+  .nav-links{display:flex;gap:1.4rem;font-size:.9rem;color:var(--ink-dim);}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{
+    font-size:.85rem;border:1px solid var(--line-strong);border-radius:999px;
+    padding:.5em 1.1em;color:var(--ink-dim);white-space:nowrap;
+  }
+  .nav-cta:hover{border-color:var(--gold);color:var(--ink);}
+
+  section{padding-block:clamp(3rem,7vw,5rem);border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .kicker{
+    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);
+    margin-bottom:.6rem;
+  }
+  .page-hero{padding-block:clamp(3rem,8vw,5rem) 2.5rem;}
+  .page-hero h1{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:500;}
+  .page-hero h1 span{color:var(--gold);}
+  .page-hero .lede{margin-top:1.1rem;max-width:62ch;color:var(--ink-dim);font-weight:300;font-size:1.1rem;}
+
+  .reveal{
+    opacity:0;transform:translateY(60px);
+    transition:opacity 1.5s cubic-bezier(.16,.6,.2,1),transform 1.5s cubic-bezier(.16,.6,.2,1);
+  }
+  .reveal.is-visible{opacity:1;transform:none;}
+
+  .tl-entry{
+    display:flex;gap:1.8rem;padding-block:2.4rem;border-top:1px solid var(--line);
+  }
+  .tl-entry:first-child{border-top:none;}
+  .tl-mark{flex:0 0 150px;position:relative;padding-left:1.4rem;}
+  .tl-mark::before{
+    content:'';position:absolute;left:0;top:.3rem;width:9px;height:9px;border-radius:50%;
+    background:var(--gold);box-shadow:0 0 0 0 rgba(251,191,36,.55);animation:tlPing 2.6s ease-out infinite;
+  }
+  @keyframes tlPing{0%{box-shadow:0 0 0 0 rgba(251,191,36,.5);}70%{box-shadow:0 0 0 9px rgba(251,191,36,0);}100%{box-shadow:0 0 0 0 rgba(251,191,36,0);}}
+  .tl-mark .when{font-size:.92rem;color:var(--gold);font-weight:600;}
+  .tl-mark .where{display:block;font-size:.84rem;color:var(--ink-faint);margin-top:.3rem;}
+  .tl-content{flex:1 1 auto;max-width:680px;perspective:900px;transition:transform .25s ease;}
+  .tl-content h3{font-size:1.35rem;font-weight:600;}
+  .tl-content h3 .co{display:block;margin-top:.3rem;font-size:.95rem;font-weight:500;color:var(--violet);font-family:var(--font-body);}
+  .tl-content ul{margin:1.1rem 0 0;padding-left:1.2rem;color:var(--ink-dim);font-weight:300;font-size:1.03rem;display:flex;flex-direction:column;gap:.65rem;}
+  .tl-content li::marker{color:var(--gold);}
+  .chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem;}
+  .chip{font-size:.82rem;border-radius:7px;background:var(--bg-elev-2);color:var(--gold);padding:.4em .8em;font-family:var(--font-head);}
+
+  .back-cta{text-align:center;padding-block:clamp(3rem,7vw,4.5rem);}
+  .back-cta a{
+    display:inline-block;border:1px solid var(--line-strong);border-radius:999px;
+    padding:.75em 1.6em;color:var(--ink);font-weight:600;font-family:var(--font-head);
+  }
+  .back-cta a:hover{border-color:var(--gold);color:var(--gold);}
+
+  footer{text-align:center;padding-block:2rem;font-size:.82rem;color:var(--ink-faint);}
+</style>
+</head>
+<body>
+
+<div class="bg-glow" aria-hidden="true"></div>
+<svg class="bg-waves" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="waveGlow" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+  <path id="waveA" class="wave-a" d="M0 120 C 300 220, 500 20, 800 140 S 1300 260, 1600 150"/>
+  <path id="waveB" class="wave-b" d="M0 380 C 350 480, 600 260, 900 400 S 1350 520, 1600 420"/>
+  <path id="waveC" class="wave-c" d="M0 680 C 300 760, 550 560, 850 700 S 1300 820, 1600 720"/>
+  <circle r="5" fill="#fbbf24" filter="url(#waveGlow)"><animateMotion dur="10s" repeatCount="indefinite"><mpath href="#waveA" xlink:href="#waveA"/></animateMotion></circle>
+  <circle r="4" fill="#a78bfa" filter="url(#waveGlow)"><animateMotion dur="13s" begin="2s" repeatCount="indefinite"><mpath href="#waveB" xlink:href="#waveB"/></animateMotion></circle>
+  <circle r="4.5" fill="#fb7185" filter="url(#waveGlow)"><animateMotion dur="15s" begin="4s" repeatCount="indefinite"><mpath href="#waveC" xlink:href="#waveC"/></animateMotion></circle>
+</svg>
+<svg class="bg-dots" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <circle cx="140" cy="200" r="3" fill="#fbbf24" opacity=".4"><animate attributeName="cy" values="200;230;200" dur="14s" repeatCount="indefinite"/></circle>
+  <circle cx="420" cy="90" r="2.4" fill="#a78bfa" opacity=".4"><animate attributeName="cx" values="420;460;420" dur="16s" repeatCount="indefinite"/></circle>
+  <circle cx="900" cy="180" r="3" fill="#fb7185" opacity=".35"><animate attributeName="cy" values="180;150;180" dur="18s" repeatCount="indefinite"/></circle>
+  <circle cx="1250" cy="260" r="2.6" fill="#fbbf24" opacity=".4"><animate attributeName="cx" values="1250;1210;1250" dur="15s" repeatCount="indefinite"/></circle>
+  <circle cx="1480" cy="150" r="2.2" fill="#a78bfa" opacity=".4"><animate attributeName="cy" values="150;185;150" dur="20s" repeatCount="indefinite"/></circle>
+  <circle cx="220" cy="520" r="2.6" fill="#a78bfa" opacity=".35"><animate attributeName="cx" values="220;260;220" dur="19s" repeatCount="indefinite"/></circle>
+  <circle cx="760" cy="620" r="3" fill="#fbbf24" opacity=".35"><animate attributeName="cy" values="620;585;620" dur="17s" repeatCount="indefinite"/></circle>
+  <circle cx="1120" cy="560" r="2.4" fill="#fb7185" opacity=".35"><animate attributeName="cx" values="1120;1160;1120" dur="21s" repeatCount="indefinite"/></circle>
+  <circle cx="1400" cy="700" r="2.8" fill="#a78bfa" opacity=".35"><animate attributeName="cy" values="700;670;700" dur="16s" repeatCount="indefinite"/></circle>
+  <circle cx="320" cy="820" r="2.4" fill="#fbbf24" opacity=".35"><animate attributeName="cx" values="320;360;320" dur="22s" repeatCount="indefinite"/></circle>
+  <circle cx="60" cy="400" r="2.2" fill="#fb7185" opacity=".3"><animate attributeName="cy" values="400;440;400" dur="19s" repeatCount="indefinite"/></circle>
+  <circle cx="1560" cy="480" r="2.2" fill="#fbbf24" opacity=".3"><animate attributeName="cy" values="480;440;480" dur="17s" repeatCount="indefinite"/></circle>
+</svg>
+<div class="bg-cubes" aria-hidden="true">
+  <div class="hcube hcube-a" style="--size:220px;--half:110px;"><div class="hcube-inner">
+    <div class="hface f-front"></div><div class="hface f-back"></div><div class="hface f-right"></div>
+    <div class="hface f-left"></div><div class="hface f-top"></div><div class="hface f-bottom"></div>
+  </div></div>
+  <div class="hcube hcube-b" style="--size:140px;--half:70px;"><div class="hcube-inner">
+    <div class="hface f-front"></div><div class="hface f-back"></div><div class="hface f-right"></div>
+    <div class="hface f-left"></div><div class="hface f-top"></div><div class="hface f-bottom"></div>
+  </div></div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark">AK</span>Ashutosh</a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="page-hero">
+    <div class="kicker">Career timeline</div>
+    <h1>Where I've <span>worked</span></h1>
+    <p class="lede">Two years moving from network operations into security operations — monitoring, triage, incident response, and supervised hands-on penetration testing — alongside earlier software development internships and freelance usability testing.</p>
+  </section>
+
+  <section>
+    <div class="tl-entry reveal">
+      <div class="tl-mark"><span class="when">Sep 2024 – Present</span><span class="where">India</span></div>
+      <div class="tl-content tilt">
+        <h3>Security Analyst<span class="co">Tietoevry India Pvt Ltd</span></h3>
+        <ul>
+          <li>Monitor and triage security events and alerts on a continuous basis, following documented SOPs and runbooks to identify, investigate, and escalate potential threats.</li>
+          <li>Investigate flagged incidents using SIEM and endpoint detection tooling, correlating log data across sources to assess severity, scope, and likely root cause before escalation.</li>
+          <li>Review and action email-security alerts, coordinating with the wider security team on remediation of phishing and suspicious-message reports.</li>
+          <li>Log, track, and close incident tickets through ITSM/ticketing tooling, maintaining clear documentation to support audit and compliance reviews.</li>
+          <li>Gained supervised, hands-on exposure to penetration testing on live systems, assisting with vulnerability identification and write-ups alongside senior testers.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">SIEM</span><span class="chip">EDR</span><span class="chip">Email Security</span><span class="chip">ITSM</span><span class="chip">Pentesting</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-entry reveal">
+      <div class="tl-mark"><span class="when">Aug 2024 – Sep 2024</span><span class="where">India</span></div>
+      <div class="tl-content tilt">
+        <h3>NOC Engineer<span class="co">Tietoevry India Pvt Ltd</span></h3>
+        <ul>
+          <li>Completed initial onboarding as a NOC Engineer, monitoring network and device health alerts and following standard operating procedures to identify and escalate outages.</li>
+          <li>Logged and tracked incidents through ticketing tools, coordinating with site and infrastructure teams to ensure timely acknowledgement and resolution.</li>
+          <li>Built foundational alert-triage and escalation discipline that carried directly into the Security Analyst role that followed.</li>
+        </ul>
+        <div class="chip-row"><span class="chip">Network Ops</span><span class="chip">Ticketing</span><span class="chip">Escalation</span></div>
+      </div>
+    </div>
+
+    <div class="tl-entry reveal">
+      <div class="tl-mark"><span class="when">Feb 1 – May 30, 2023</span><span class="where">Punjab, India</span></div>
+      <div class="tl-content tilt">
+        <h3>Software Development Intern<span class="co">Pgtech</span></h3>
+        <ul><li>Developed and maintained web application features using Node.js, React.js, Express.js, and MongoDB.</li></ul>
+        <div class="chip-row"><span class="chip">Node.js</span><span class="chip">React.js</span><span class="chip">Express.js</span><span class="chip">MongoDB</span></div>
+      </div>
+    </div>
+
+    <div class="tl-entry reveal">
+      <div class="tl-mark"><span class="when">Mar – Jun 2022</span><span class="where">Mohali, India</span></div>
+      <div class="tl-content tilt">
+        <h3>Software Development Intern<span class="co">Persistent</span></h3>
+        <ul><li>Learned and applied OOP concepts and JavaScript programming; built backend fundamentals with Node.js and MongoDB.</li></ul>
+        <div class="chip-row"><span class="chip">OOP</span><span class="chip">JavaScript</span><span class="chip">Node.js</span></div>
+      </div>
+    </div>
+
+    <div class="tl-entry reveal">
+      <div class="tl-mark"><span class="when">Feb 2022 – Aug 2024</span></div>
+      <div class="tl-content tilt">
+        <h3>Freelance Usability Tester<span class="co">UserTesting.com</span></h3>
+        <ul>
+          <li>Complete paid usability and feedback tests evaluating websites and applications, providing structured, detailed feedback under platform confidentiality terms.</li>
+          <li>Completed 25+ tests to date, maintaining a consistent quality/completion record.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="back-cta">
+    <a href="index.html">← Back to Home</a>
+  </section>
+</main>
+
+<footer>© 2026 Ashutosh Kumar</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        var el = e.target;
+        el.classList.add('is-visible');
+        io.unobserve(el);
+      }
+    });
+  }, { threshold:0.15, rootMargin:'0px 0px -8% 0px' });
+  revealEls.forEach(function(el){ io.observe(el); });
+  if (reduceMotion){ revealEls.forEach(function(el){ el.classList.add('is-visible'); }); }
+
+  if (!reduceMotion && window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.tilt').forEach(function(el){
+      el.addEventListener('pointermove', function(e){
+        el.style.transition = 'none';
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = 'perspective(900px) rotateX(' + (-py * 6).toFixed(2) + 'deg) rotateY(' + (px * 6).toFixed(2) + 'deg)';
+      });
+      el.addEventListener('pointerleave', function(){
+        el.style.transition = 'transform .3s ease';
+        el.style.transform = '';
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>

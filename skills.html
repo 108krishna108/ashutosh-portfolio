@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills — Ashutosh Kumar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap">
+<style>
+  :root{
+    --bg:#070b16;
+    --bg-elev:#0e1426;
+    --bg-elev-2:#121a32;
+    --ink:#eef2ff;
+    --ink-dim:#9aa5c9;
+    --ink-faint:#5b6490;
+    --line:#19213d;
+    --line-strong:#2b3660;
+    --blue:#60a5fa;
+    --violet:#c084fc;
+    --pink:#f472b6;
+    --font:'Sora',ui-sans-serif,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+    font-size:16.5px;line-height:1.65;overflow-x:hidden;position:relative;
+  }
+  ::selection{background:var(--blue);color:#040a1a;}
+  a{color:inherit;text-decoration:none;}
+  p{margin:0;}
+  h1,h2,h3{margin:0;letter-spacing:-.01em;text-wrap:balance;}
+
+  .bg-glow{
+    position:fixed;inset:0;z-index:-4;pointer-events:none;
+    background:radial-gradient(ellipse 85% 60% at 50% -10%, rgba(96,165,250,.18), rgba(0,0,0,0) 70%);
+  }
+  .bg-grid{
+    position:fixed;inset:0;z-index:-3;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(96,165,250,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96,165,250,.08) 1px, transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 65% at 50% 0%, #000 30%, transparent 90%);
+    mask-image:radial-gradient(ellipse 80% 65% at 50% 0%, #000 30%, transparent 90%);
+  }
+  .bg-circuit{position:fixed;inset:0;z-index:-2;width:100%;height:100%;pointer-events:none;}
+  .bg-circuit .trace{stroke-dasharray:9 15;animation:dashFlow 2.4s linear infinite;}
+  @keyframes dashFlow{to{stroke-dashoffset:-48;}}
+  .bg-cubes{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
+  .hcube{position:absolute;width:var(--size);height:var(--size);perspective:900px;}
+  .hcube-a{top:9%;right:5%;}
+  .hcube-b{bottom:7%;left:4%;}
+  .hcube-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;}
+  .hcube-a .hcube-inner{animation:cubeSpinA 36s linear infinite;}
+  .hcube-b .hcube-inner{animation:cubeSpinB 27s linear infinite;}
+  .hface{position:absolute;inset:0;border:1px solid rgba(96,165,250,.3);background:linear-gradient(135deg, rgba(96,165,250,.06), rgba(192,132,252,.04));}
+  .f-front{transform:translateZ(var(--half));}
+  .f-back{transform:translateZ(calc(var(--half) * -1)) rotateY(180deg);}
+  .f-right{transform:rotateY(90deg) translateZ(var(--half));}
+  .f-left{transform:rotateY(-90deg) translateZ(var(--half));}
+  .f-top{transform:rotateX(90deg) translateZ(var(--half));}
+  .f-bottom{transform:rotateX(-90deg) translateZ(var(--half));}
+  @keyframes cubeSpinA{from{transform:rotateX(0deg) rotateY(0deg);}to{transform:rotateX(360deg) rotateY(360deg);}}
+  @keyframes cubeSpinB{from{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);}to{transform:rotateX(-360deg) rotateY(360deg) rotateZ(360deg);}}
+
+  @media (prefers-reduced-motion: reduce){
+    .bg-circuit .pulse{display:none;}
+    .bg-circuit .trace{animation:none;}
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+  }
+
+  .wrap{max-width:1080px;margin-inline:auto;padding-inline:clamp(18px,4vw,32px);}
+
+  nav{
+    position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+    padding-block:1.1rem;background:rgba(7,11,22,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:1080px;margin-inline:auto;width:100%;padding-inline:clamp(18px,4vw,32px);display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+  .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.02em;}
+  .logo-mark{
+    width:30px;height:30px;border-radius:9px;border:1px solid var(--line-strong);
+    background:var(--bg-elev);display:flex;align-items:center;justify-content:center;
+    font-size:.7rem;font-weight:700;color:var(--blue);
+  }
+  .nav-links{display:flex;gap:1.3rem;font-size:.88rem;color:var(--ink-dim);}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{
+    font-size:.84rem;border:1px solid var(--line-strong);border-radius:999px;
+    padding:.5em 1.1em;color:var(--ink-dim);white-space:nowrap;
+  }
+  .nav-cta:hover{border-color:var(--blue);color:var(--ink);}
+
+  section{padding-block:clamp(3rem,7vw,5rem);border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .kicker{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.6rem;}
+  .page-hero{padding-block:clamp(3rem,8vw,5rem) 2.5rem;}
+  .page-hero h1{font-size:clamp(2.3rem,6vw,3.4rem);font-weight:600;}
+  .page-hero h1 span{
+    background:linear-gradient(90deg,var(--blue),var(--violet) 60%,var(--pink));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .page-hero .lede{margin-top:1.1rem;max-width:62ch;color:var(--ink-dim);font-weight:300;font-size:1.08rem;}
+
+  .reveal{opacity:0;transform:translateY(55px) scale(.97);transition:opacity 1.2s cubic-bezier(.16,.6,.2,1),transform 1.2s cubic-bezier(.16,.6,.2,1);}
+  .reveal.is-visible{opacity:1;transform:none;}
+
+  .skill-group{margin-bottom:2.4rem;}
+  .skill-group:last-child{margin-bottom:0;}
+  .skill-group h4{
+    display:flex;align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:1.2rem;font-weight:600;
+  }
+  .group-icon{width:16px;height:16px;flex:none;color:var(--blue);}
+  .badge-row{display:flex;flex-wrap:wrap;gap:.9rem;perspective:800px;}
+  .badge{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;
+    width:140px;min-height:138px;text-align:center;padding:1.1rem .8rem;
+    border:1px solid var(--line-strong);border-radius:18px;
+    color:var(--ink-dim);background:linear-gradient(160deg,var(--bg-elev),var(--bg-elev-2));
+    animation:floatSkill var(--dur,7s) ease-in-out infinite;animation-delay:var(--delay,0s);
+    transition:border-color .2s ease,box-shadow .2s ease;
+  }
+  .badge:hover{border-color:var(--blue);box-shadow:0 0 0 1px rgba(96,165,250,.3),0 18px 30px -18px rgba(96,165,250,.5);}
+  @keyframes floatSkill{0%,100%{transform:translateY(0) rotateY(-10deg);}50%{transform:translateY(-7px) rotateY(10deg);}}
+  .badge-icon{width:26px;height:26px;flex:none;color:var(--blue);}
+  .badge-label{font-size:.78rem;line-height:1.3;}
+
+  .back-cta{text-align:center;padding-block:clamp(3rem,7vw,4.5rem);}
+  .back-cta a{display:inline-block;border:1px solid var(--line-strong);border-radius:999px;padding:.75em 1.6em;color:var(--ink);font-weight:600;}
+  .back-cta a:hover{border-color:var(--blue);color:var(--blue);}
+
+  footer{text-align:center;padding-block:2rem;font-size:.82rem;color:var(--ink-faint);}
+</style>
+</head>
+<body>
+
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<svg class="bg-circuit" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="pulseGlowSkill" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="4.5"/></filter>
+  </defs>
+  <g class="trace" fill="none" stroke="rgba(96,165,250,0.38)" stroke-width="2">
+    <path id="sPathA" d="M 60 900 L 60 560 L 250 560 L 250 260 L 430 260"/>
+    <path id="sPathB" d="M 0 140 L 210 140 L 210 380 L 30 380 L 30 640"/>
+    <path id="sPathC" d="M 1600 780 L 1370 780 L 1370 440 L 1150 440 L 1150 130"/>
+    <path id="sPathD" d="M 1600 90 L 1400 90 L 1400 360 L 1560 360 L 1560 620"/>
+  </g>
+  <g fill="rgba(96,165,250,0.5)">
+    <circle cx="60" cy="900" r="3"/><circle cx="60" cy="560" r="3"/><circle cx="250" cy="560" r="3"/><circle cx="250" cy="260" r="3"/><circle cx="430" cy="260" r="3"/>
+    <circle cx="0" cy="140" r="3"/><circle cx="210" cy="140" r="3"/><circle cx="210" cy="380" r="3"/><circle cx="30" cy="380" r="3"/><circle cx="30" cy="640" r="3"/>
+    <circle cx="1600" cy="780" r="3"/><circle cx="1370" cy="780" r="3"/><circle cx="1370" cy="440" r="3"/><circle cx="1150" cy="440" r="3"/><circle cx="1150" cy="130" r="3"/>
+    <circle cx="1600" cy="90" r="3"/><circle cx="1400" cy="90" r="3"/><circle cx="1400" cy="360" r="3"/><circle cx="1560" cy="360" r="3"/><circle cx="1560" cy="620" r="3"/>
+  </g>
+  <circle class="pulse" r="6.5" fill="#60a5fa" filter="url(#pulseGlowSkill)"><animateMotion dur="9s" repeatCount="indefinite"><mpath href="#sPathA" xlink:href="#sPathA"/></animateMotion></circle>
+  <circle class="pulse" r="4" fill="#c084fc" opacity=".6" filter="url(#pulseGlowSkill)"><animateMotion dur="11s" begin="1.5s" repeatCount="indefinite"><mpath href="#sPathB" xlink:href="#sPathB"/></animateMotion></circle>
+  <circle class="pulse" r="5.5" fill="#f472b6" filter="url(#pulseGlowSkill)"><animateMotion dur="8s" begin="0.8s" repeatCount="indefinite"><mpath href="#sPathC" xlink:href="#sPathC"/></animateMotion></circle>
+  <circle class="pulse" r="4.5" fill="#60a5fa" opacity=".6" filter="url(#pulseGlowSkill)"><animateMotion dur="10s" begin="2.2s" repeatCount="indefinite"><mpath href="#sPathD" xlink:href="#sPathD"/></animateMotion></circle>
+  <g class="drift">
+    <circle cx="320" cy="150" r="2.6" fill="#60a5fa" opacity=".5"><animate attributeName="cy" values="150;200;150" dur="20s" repeatCount="indefinite"/></circle>
+    <circle cx="300" cy="620" r="2.6" fill="#c084fc" opacity=".5"><animate attributeName="cx" values="300;350;300" dur="27s" repeatCount="indefinite"/></circle>
+    <circle cx="1280" cy="150" r="2.6" fill="#f472b6" opacity=".5"><animate attributeName="cx" values="1280;1330;1280" dur="20s" repeatCount="indefinite"/></circle>
+    <circle cx="1300" cy="620" r="2.6" fill="#60a5fa" opacity=".5"><animate attributeName="cy" values="620;570;620" dur="24s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>
+<div class="bg-cubes" aria-hidden="true">
+  <div class="hcube hcube-a" style="--size:220px;--half:110px;"><div class="hcube-inner">
+    <div class="hface f-front"></div><div class="hface f-back"></div><div class="hface f-right"></div>
+    <div class="hface f-left"></div><div class="hface f-top"></div><div class="hface f-bottom"></div>
+  </div></div>
+  <div class="hcube hcube-b" style="--size:140px;--half:70px;"><div class="hcube-inner">
+    <div class="hface f-front"></div><div class="hface f-back"></div><div class="hface f-right"></div>
+    <div class="hface f-left"></div><div class="hface f-top"></div><div class="hface f-bottom"></div>
+  </div></div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark">AK</span>Ashutosh</a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="page-hero">
+    <div class="kicker">What I work with</div>
+    <h1>Core <span>Skills</span></h1>
+    <p class="lede">From SOC monitoring and incident triage to application-security testing and Python-based automation — the tools and techniques I use day to day.</p>
+  </section>
+
+  <section>
+    <div class="skill-group reveal">
+      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Security Operations</h4>
+      <div class="badge-row">
+        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">SOC Monitoring &amp; Triage</span></span>
+        <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">Incident Response</span></span>
+        <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">Threat Detection</span></span>
+        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">SOP-Driven Investigation</span></span>
+        <span class="badge" style="--dur:7s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">Alert Escalation</span></span>
+        <span class="badge" style="--dur:6.8s;--delay:.4s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">Audit &amp; Compliance Support</span></span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg>Security Tooling</h4>
+      <div class="badge-row">
+        <span class="badge" style="--dur:7s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">SIEM (log monitoring &amp; correlation)</span></span>
+        <span class="badge" style="--dur:6s;--delay:.4s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">EDR / Endpoint Detection &amp; Response</span></span>
+        <span class="badge" style="--dur:8s;--delay:.1s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">Email Security / Anti-Phishing</span></span>
+        <span class="badge" style="--dur:6.5s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">Ticketing &amp; ITSM</span></span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg>Application &amp; Web Security</h4>
+      <div class="badge-row">
+        <span class="badge" style="--dur:6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">OWASP Top 10</span></span>
+        <span class="badge" style="--dur:7s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">SQL Injection</span></span>
+        <span class="badge" style="--dur:6.5s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">XSS (Stored/Reflected)</span></span>
+        <span class="badge" style="--dur:8s;--delay:.15s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">CSRF</span></span>
+        <span class="badge" style="--dur:7.5s;--delay:.45s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">IDOR</span></span>
+        <span class="badge" style="--dur:6s;--delay:.25s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">SSRF</span></span>
+        <span class="badge" style="--dur:7s;--delay:.55s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">Broken Access Control</span></span>
+        <span class="badge" style="--dur:6.7s;--delay:.35s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">Insecure File Upload</span></span>
+        <span class="badge" style="--dur:7.8s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">Vulnerability Assessment &amp; Remediation</span></span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>Programming &amp; Automation</h4>
+      <div class="badge-row">
+        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">Python</span></span>
+        <span class="badge" style="--dur:7s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">Flask</span></span>
+        <span class="badge" style="--dur:8s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">FastAPI</span></span>
+        <span class="badge" style="--dur:6s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">SQL</span></span>
+        <span class="badge" style="--dur:7.2s;--delay:.4s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">Regex-Based Detection Rules</span></span>
+        <span class="badge" style="--dur:7.5s;--delay:.1s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">Machine Learning (scikit-learn, TF-IDF, Logistic Regression)</span></span>
+        <span class="badge" style="--dur:6.5s;--delay:.4s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">Git / GitHub</span></span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Additional</h4>
+      <div class="badge-row">
+        <span class="badge" style="--dur:6.8s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">C++</span></span>
+        <span class="badge" style="--dur:7.3s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">HTML</span></span>
+        <span class="badge" style="--dur:6.2s;--delay:.4s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">CSS</span></span>
+        <span class="badge" style="--dur:7.6s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">JavaScript</span></span>
+        <span class="badge" style="--dur:6.9s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">Chrome Extension Development</span></span>
+        <span class="badge" style="--dur:8.1s;--delay:.15s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">Windows</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="back-cta">
+    <a href="index.html">← Back to Home</a>
+  </section>
+</main>
+
+<footer>© 2026 Ashutosh Kumar</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        var el = e.target;
+        el.classList.add('is-visible');
+        io.unobserve(el);
+      }
+    });
+  }, { threshold:0.1, rootMargin:'0px 0px -6% 0px' });
+  revealEls.forEach(function(el){ io.observe(el); });
+  if (reduceMotion){ revealEls.forEach(function(el){ el.classList.add('is-visible'); }); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certifications — Ashutosh Kumar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>
+  :root{
+    --bg:#120d08;
+    --bg-elev:#1b140c;
+    --bg-elev-2:#221a0f;
+    --ink:#f8f1e4;
+    --ink-dim:#c9b79a;
+    --ink-faint:#8a765c;
+    --line:#2c2113;
+    --line-strong:#473319;
+    --gold:#e3b94c;
+    --gold-soft:#f0cf7f;
+    --maroon:#c2574a;
+    --font-head:'Fraunces',Georgia,serif;
+    --font-body:'Manrope',ui-sans-serif,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
+    font-size:16.5px;line-height:1.65;overflow-x:hidden;position:relative;
+  }
+  ::selection{background:var(--gold);color:#1a1205;}
+  a{color:inherit;text-decoration:none;}
+  p{margin:0;}
+  h1,h2,h3,h4{margin:0;letter-spacing:-.01em;text-wrap:balance;font-family:var(--font-head);}
+
+  .bg-glow{
+    position:fixed;inset:0;z-index:-4;pointer-events:none;
+    background:radial-gradient(ellipse 85% 60% at 50% -10%, rgba(227,185,76,.14), rgba(0,0,0,0) 70%);
+  }
+  .bg-grid{
+    position:fixed;inset:0;z-index:-3;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(227,185,76,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(227,185,76,.08) 1px, transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 65% at 50% 0%, #000 30%, transparent 90%);
+    mask-image:radial-gradient(ellipse 80% 65% at 50% 0%, #000 30%, transparent 90%);
+  }
+  .bg-circuit{position:fixed;inset:0;z-index:-2;width:100%;height:100%;pointer-events:none;}
+  .bg-circuit .trace{stroke-dasharray:9 15;animation:dashFlow 2.4s linear infinite;}
+  @keyframes dashFlow{to{stroke-dashoffset:-48;}}
+  .bg-cubes{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
+  .hcube{position:absolute;width:var(--size);height:var(--size);perspective:900px;}
+  .hcube-a{top:9%;right:5%;}
+  .hcube-b{bottom:7%;left:4%;}
+  .hcube-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;}
+  .hcube-a .hcube-inner{animation:cubeSpinA 36s linear infinite;}
+  .hcube-b .hcube-inner{animation:cubeSpinB 27s linear infinite;}
+  .hface{position:absolute;inset:0;border:1px solid rgba(227,185,76,.3);background:linear-gradient(135deg, rgba(227,185,76,.06), rgba(194,87,74,.04));}
+  .f-front{transform:translateZ(var(--half));}
+  .f-back{transform:translateZ(calc(var(--half) * -1)) rotateY(180deg);}
+  .f-right{transform:rotateY(90deg) translateZ(var(--half));}
+  .f-left{transform:rotateY(-90deg) translateZ(var(--half));}
+  .f-top{transform:rotateX(90deg) translateZ(var(--half));}
+  .f-bottom{transform:rotateX(-90deg) translateZ(var(--half));}
+  @keyframes cubeSpinA{from{transform:rotateX(0deg) rotateY(0deg);}to{transform:rotateX(360deg) rotateY(360deg);}}
+  @keyframes cubeSpinB{from{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);}to{transform:rotateX(-360deg) rotateY(360deg) rotateZ(360deg);}}
+  .bg-sheen{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;}
+  .bg-sheen::before{
+    content:'';position:absolute;top:-20%;left:-60%;width:60%;height:140%;
+    background:linear-gradient(100deg, rgba(227,185,76,0) 0%, rgba(227,185,76,.08) 50%, rgba(227,185,76,0) 100%);
+    animation:sheenMove 7s ease-in-out infinite;
+  }
+  @keyframes sheenMove{0%{left:-60%;}50%{left:110%;}100%{left:-60%;}}
+  @media (prefers-reduced-motion: reduce){
+    .bg-circuit .pulse{display:none;}
+    .bg-circuit .trace{animation:none;}
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+  }
+
+  .wrap{max-width:1040px;margin-inline:auto;padding-inline:clamp(18px,4vw,32px);}
+
+  nav{
+    position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+    padding-block:1.1rem;background:rgba(18,13,8,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:1040px;margin-inline:auto;width:100%;padding-inline:clamp(18px,4vw,32px);display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+  .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.02em;font-family:var(--font-head);}
+  .logo-mark{
+    width:30px;height:30px;border-radius:50%;border:1px solid var(--line-strong);
+    background:var(--bg-elev);display:flex;align-items:center;justify-content:center;
+    font-size:.68rem;font-weight:700;color:var(--gold);
+  }
+  .nav-links{display:flex;gap:1.3rem;font-size:.86rem;color:var(--ink-dim);}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{font-size:.84rem;border:1px solid var(--line-strong);border-radius:999px;padding:.5em 1.1em;color:var(--ink-dim);white-space:nowrap;}
+  .nav-cta:hover{border-color:var(--gold);color:var(--ink);}
+
+  section{padding-block:clamp(3rem,7vw,5rem);border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .kicker{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.6rem;font-family:var(--font-body);}
+  .page-hero{padding-block:clamp(3rem,8vw,5rem) 2.5rem;text-align:center;}
+  .page-hero h1{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:500;}
+  .page-hero h1 span{color:var(--gold);}
+  .page-hero .lede{margin:1.1rem auto 0;max-width:62ch;color:var(--ink-dim);font-weight:300;font-size:1.06rem;}
+
+  .reveal{opacity:0;transform:translateY(45px) rotateX(6deg);transition:opacity 1.3s cubic-bezier(.16,.6,.2,1),transform 1.3s cubic-bezier(.16,.6,.2,1);}
+  .reveal.is-visible{opacity:1;transform:none;}
+
+  .cert-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.3rem;perspective:900px;}
+  .cert{
+    flex:1 1 250px;max-width:310px;border:1px solid var(--line-strong);border-radius:4px;
+    padding:1.6rem 1.6rem 1.4rem;background:linear-gradient(160deg,var(--bg-elev),var(--bg-elev-2));display:block;
+    position:relative;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;
+  }
+  .cert::before{
+    content:'';position:absolute;inset:7px;border:1px solid rgba(227,185,76,.18);border-radius:2px;pointer-events:none;
+  }
+  a.cert:hover{border-color:var(--gold);box-shadow:0 20px 40px -24px rgba(227,185,76,.5);transform:translateY(-4px);}
+  .cert-year{font-size:.8rem;color:var(--gold);font-family:var(--font-body);letter-spacing:.04em;}
+  .cert h4{margin-top:.5rem;font-size:1.18rem;font-weight:600;}
+  .cert-issuer{font-size:.88rem;color:var(--ink-dim);margin-top:.3rem;font-family:var(--font-body);}
+  .cert-open{font-size:.76rem;color:var(--gold);margin-top:.9rem;font-family:var(--font-body);}
+
+  .back-cta{text-align:center;padding-block:clamp(3rem,7vw,4.5rem);}
+  .back-cta a{display:inline-block;border:1px solid var(--line-strong);border-radius:999px;padding:.75em 1.6em;color:var(--ink);font-weight:600;font-family:var(--font-head);}
+  .back-cta a:hover{border-color:var(--gold);color:var(--gold);}
+
+  footer{text-align:center;padding-block:2rem;font-size:.82rem;color:var(--ink-faint);}
+</style>
+</head>
+<body>
+
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-sheen" aria-hidden="true"></div>
+<svg class="bg-circuit" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="pulseGlowCert" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="4.5"/></filter>
+  </defs>
+  <g class="trace" fill="none" stroke="rgba(227,185,76,0.4)" stroke-width="2">
+    <path id="gPathA" d="M 60 900 L 60 560 L 250 560 L 250 260 L 430 260"/>
+    <path id="gPathB" d="M 0 140 L 210 140 L 210 380 L 30 380 L 30 640"/>
+    <path id="gPathC" d="M 1600 780 L 1370 780 L 1370 440 L 1150 440 L 1150 130"/>
+    <path id="gPathD" d="M 1600 90 L 1400 90 L 1400 360 L 1560 360 L 1560 620"/>
+  </g>
+  <g fill="rgba(227,185,76,0.55)">
+    <circle cx="60" cy="900" r="3"/><circle cx="60" cy="560" r="3"/><circle cx="250" cy="560" r="3"/><circle cx="250" cy="260" r="3"/><circle cx="430" cy="260" r="3"/>
+    <circle cx="0" cy="140" r="3"/><circle cx="210" cy="140" r="3"/><circle cx="210" cy="380" r="3"/><circle cx="30" cy="380" r="3"/><circle cx="30" cy="640" r="3"/>
+    <circle cx="1600" cy="780" r="3"/><circle cx="1370" cy="780" r="3"/><circle cx="1370" cy="440" r="3"/><circle cx="1150" cy="440" r="3"/><circle cx="1150" cy="130" r="3"/>
+    <circle cx="1600" cy="90" r="3"/><circle cx="1400" cy="90" r="3"/><circle cx="1400" cy="360" r="3"/><circle cx="1560" cy="360" r="3"/><circle cx="1560" cy="620" r="3"/>
+  </g>
+  <circle class="pulse" r="6.5" fill="#e3b94c" filter="url(#pulseGlowCert)"><animateMotion dur="9s" repeatCount="indefinite"><mpath href="#gPathA" xlink:href="#gPathA"/></animateMotion></circle>
+  <circle class="pulse" r="4" fill="#f0cf7f" opacity=".6" filter="url(#pulseGlowCert)"><animateMotion dur="11s" begin="1.5s" repeatCount="indefinite"><mpath href="#gPathB" xlink:href="#gPathB"/></animateMotion></circle>
+  <circle class="pulse" r="5.5" fill="#c2574a" filter="url(#pulseGlowCert)"><animateMotion dur="8s" begin="0.8s" repeatCount="indefinite"><mpath href="#gPathC" xlink:href="#gPathC"/></animateMotion></circle>
+  <circle class="pulse" r="4.5" fill="#e3b94c" opacity=".6" filter="url(#pulseGlowCert)"><animateMotion dur="10s" begin="2.2s" repeatCount="indefinite"><mpath href="#gPathD" xlink:href="#gPathD"/></animateMotion></circle>
+  <g class="drift">
+    <circle cx="320" cy="150" r="2.4" fill="#e3b94c" opacity=".5"><animate attributeName="cy" values="150;200;150" dur="20s" repeatCount="indefinite"/></circle>
+    <circle cx="300" cy="620" r="2.4" fill="#f0cf7f" opacity=".5"><animate attributeName="cx" values="300;350;300" dur="27s" repeatCount="indefinite"/></circle>
+    <circle cx="1280" cy="150" r="2.4" fill="#c2574a" opacity=".5"><animate attributeName="cx" values="1280;1330;1280" dur="20s" repeatCount="indefinite"/></circle>
+    <circle cx="1300" cy="620" r="2.4" fill="#e3b94c" opacity=".5"><animate attributeName="cy" values="620;570;620" dur="24s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>
+<div class="bg-cubes" aria-hidden="true">
+  <div class="hcube hcube-a" style="--size:220px;--half:110px;"><div class="hcube-inner">
+    <div class="hface f-front"></div><div class="hface f-back"></div><div class="hface f-right"></div>
+    <div class="hface f-left"></div><div class="hface f-top"></div><div class="hface f-bottom"></div>
+  </div></div>
+  <div class="hcube hcube-b" style="--size:140px;--half:70px;"><div class="hcube-inner">
+    <div class="hface f-front"></div><div class="hface f-back"></div><div class="hface f-right"></div>
+    <div class="hface f-left"></div><div class="hface f-top"></div><div class="hface f-bottom"></div>
+  </div></div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark">AK</span>Ashutosh</a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="page-hero">
+    <div class="kicker">Credentials</div>
+    <h1>Certifications <span>&amp; Training</span></h1>
+    <p class="lede">Formal coursework and training completed alongside on-the-job SOC experience and independent security research.</p>
+  </section>
+
+  <section>
+    <div class="cert-grid">
+      <a class="cert reveal" href="https://drive.google.com/drive/folders/1lPvsDt-7lBXQo9Z0tTZPq7gN1NkgjozB?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <div class="cert-year">2026</div>
+        <h4>Ethical Hacker</h4>
+        <div class="cert-issuer">Cisco Networking Academy</div>
+        <div class="cert-open">View certificate ↗</div>
+      </a>
+      <a class="cert reveal" href="https://drive.google.com/drive/folders/1lPvsDt-7lBXQo9Z0tTZPq7gN1NkgjozB?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <div class="cert-year">2026</div>
+        <h4>Cybersecurity &amp; Cloud Fundamentals</h4>
+        <div class="cert-issuer">Fortinet Training Institute</div>
+        <div class="cert-open">View certificate ↗</div>
+      </a>
+      <a class="cert reveal" href="https://drive.google.com/drive/folders/1lPvsDt-7lBXQo9Z0tTZPq7gN1NkgjozB?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <div class="cert-year">2026</div>
+        <h4>Introduction to Next-Gen Firewall</h4>
+        <div class="cert-issuer">Fortinet Training Institute</div>
+        <div class="cert-open">View certificate ↗</div>
+      </a>
+      <a class="cert reveal" href="https://drive.google.com/drive/folders/17gWDw0-nOkX5b3Zy6BZHr-tLGWZZBBZR?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <div class="cert-year">May 2024 · 32 hrs</div>
+        <h4>Python: Master Programming and Development with 15 Projects</h4>
+        <div class="cert-issuer">Udemy</div>
+        <div class="cert-open">View certificate ↗</div>
+      </a>
+      <a class="cert reveal" href="https://drive.google.com/drive/folders/17gWDw0-nOkX5b3Zy6BZHr-tLGWZZBBZR?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <div class="cert-year">May 2024 · 26 hrs</div>
+        <h4>Web Development Masterclass</h4>
+        <div class="cert-issuer">Udemy</div>
+        <div class="cert-open">View certificate ↗</div>
+      </a>
+      <a class="cert reveal" href="https://drive.google.com/drive/folders/1X7R6Z8djDzRFwH_glODkxabgyO7KA3sj?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <div class="cert-year">2022</div>
+        <h4>Martian Internship Program</h4>
+        <div class="cert-issuer">Persistent</div>
+        <div class="cert-open">View certificate ↗</div>
+      </a>
+      <a class="cert reveal" href="https://drive.google.com/drive/folders/1X7R6Z8djDzRFwH_glODkxabgyO7KA3sj?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <div class="cert-year">Feb – May 2023</div>
+        <h4>Python Programming Training</h4>
+        <div class="cert-issuer">PG-Technology Pvt Ltd</div>
+        <div class="cert-open">View certificate ↗</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="back-cta">
+    <a href="index.html">← Back to Home</a>
+  </section>
+</main>
+
+<footer>© 2026 Ashutosh Kumar</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e, i){
+      if (e.isIntersecting){
+        var el = e.target;
+        setTimeout(function(){ el.classList.add('is-visible'); }, i * 70);
+        io.unobserve(el);
+      }
+    });
+  }, { threshold:0.1, rootMargin:'0px 0px -6% 0px' });
+  revealEls.forEach(function(el){ io.observe(el); });
+  if (reduceMotion){ revealEls.forEach(function(el){ el.classList.add('is-visible'); }); }
+
+  if (!reduceMotion && window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.cert').forEach(function(el){
+      el.addEventListener('pointermove', function(e){
+        el.style.transition = 'none';
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = 'perspective(700px) rotateX(' + (-py * 8).toFixed(2) + 'deg) rotateY(' + (px * 8).toFixed(2) + 'deg) translateY(-4px)';
+      });
+      el.addEventListener('pointerleave', function(){
+        el.style.transition = 'transform .3s ease';
+        el.style.transform = '';
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>

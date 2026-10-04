@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Ashutosh Kumar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap">
+<style>
+  :root{
+    --bg:#05070a;
+    --bg-elev:#0c1210;
+    --bg-elev-2:#101916;
+    --ink:#e9fcef;
+    --ink-dim:#89a398;
+    --ink-faint:#4d6158;
+    --line:#152019;
+    --line-strong:#223a2c;
+    --green:#39ff88;
+    --cyan:#2dd4bf;
+    --rose:#fb7185;
+    --font:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+    font-size:15.5px;line-height:1.7;overflow-x:hidden;position:relative;
+  }
+  ::selection{background:var(--green);color:#03150a;}
+  a{color:inherit;text-decoration:none;}
+  p{margin:0;}
+  h1,h2,h3{margin:0;letter-spacing:-.01em;text-wrap:balance;}
+
+  /* ambient background: terminal grid + scanline, no circuit cubes */
+  .bg-glow{
+    position:fixed;inset:0;z-index:-4;pointer-events:none;
+    background:radial-gradient(ellipse 85% 55% at 50% -10%, rgba(57,255,136,.1), rgba(0,0,0,0) 70%);
+  }
+  .bg-grid{
+    position:fixed;inset:0;z-index:-3;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(57,255,136,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(57,255,136,.07) 1px, transparent 1px);
+    background-size:34px 34px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 65% at 50% 0%, #000 30%, transparent 90%);
+    mask-image:radial-gradient(ellipse 80% 65% at 50% 0%, #000 30%, transparent 90%);
+  }
+  .bg-scan{
+    position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;
+  }
+  .bg-scan::before{
+    content:'';position:absolute;left:0;right:0;height:140px;
+    background:linear-gradient(180deg, rgba(57,255,136,0) 0%, rgba(57,255,136,.06) 50%, rgba(57,255,136,0) 100%);
+    animation:scanMove 6s linear infinite;
+  }
+  @keyframes scanMove{0%{top:-140px;}100%{top:100%;}}
+  .bg-cols{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;display:flex;justify-content:space-between;padding-inline:4%;}
+  .bg-cols span{
+    font-size:.8rem;color:var(--green);opacity:.18;writing-mode:vertical-rl;letter-spacing:.3em;
+    animation:colDrift linear infinite;white-space:nowrap;
+  }
+  @keyframes colDrift{0%{transform:translateY(-100%);}100%{transform:translateY(100%);}}
+  .bg-cubes{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
+  .hcube{position:absolute;width:var(--size);height:var(--size);perspective:900px;}
+  .hcube-a{top:9%;right:5%;}
+  .hcube-b{bottom:7%;left:4%;}
+  .hcube-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;}
+  .hcube-a .hcube-inner{animation:cubeSpinA 36s linear infinite;}
+  .hcube-b .hcube-inner{animation:cubeSpinB 27s linear infinite;}
+  .hface{position:absolute;inset:0;border:1px solid rgba(57,255,136,.3);background:linear-gradient(135deg, rgba(57,255,136,.06), rgba(45,212,191,.04));}
+  .f-front{transform:translateZ(var(--half));}
+  .f-back{transform:translateZ(calc(var(--half) * -1)) rotateY(180deg);}
+  .f-right{transform:rotateY(90deg) translateZ(var(--half));}
+  .f-left{transform:rotateY(-90deg) translateZ(var(--half));}
+  .f-top{transform:rotateX(90deg) translateZ(var(--half));}
+  .f-bottom{transform:rotateX(-90deg) translateZ(var(--half));}
+  @keyframes cubeSpinA{from{transform:rotateX(0deg) rotateY(0deg);}to{transform:rotateX(360deg) rotateY(360deg);}}
+  @keyframes cubeSpinB{from{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);}to{transform:rotateX(-360deg) rotateY(360deg) rotateZ(360deg);}}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+  }
+
+  .wrap{max-width:1040px;margin-inline:auto;padding-inline:clamp(18px,4vw,32px);}
+
+  nav{
+    position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+    padding-block:1.1rem;background:rgba(5,7,10,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:1040px;margin-inline:auto;width:100%;padding-inline:clamp(18px,4vw,32px);display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+  .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.02em;}
+  .logo-mark{
+    width:30px;height:30px;border-radius:6px;border:1px solid var(--line-strong);
+    background:var(--bg-elev);display:flex;align-items:center;justify-content:center;
+    font-size:.68rem;font-weight:700;color:var(--green);
+  }
+  .nav-links{display:flex;gap:1.3rem;font-size:.84rem;color:var(--ink-dim);}
+  .nav-links a:hover{color:var(--green);}
+  .nav-cta{
+    font-size:.8rem;border:1px solid var(--line-strong);border-radius:6px;
+    padding:.5em 1.1em;color:var(--ink-dim);white-space:nowrap;
+  }
+  .nav-cta:hover{border-color:var(--green);color:var(--green);}
+
+  section{padding-block:clamp(3rem,7vw,5rem);border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .kicker{
+    font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
+    margin-bottom:.6rem;
+  }
+  .kicker::before{content:'$ ';color:var(--green);}
+  .page-hero{padding-block:clamp(3rem,8vw,5rem) 2.5rem;}
+  .page-hero h1{font-size:clamp(1.9rem,5vw,2.8rem);font-weight:700;}
+  .page-hero h1 span{color:var(--green);}
+  .page-hero .lede{margin-top:1.1rem;max-width:68ch;color:var(--ink-dim);font-weight:300;font-size:1rem;}
+
+  .reveal{
+    opacity:0;transform:translateY(50px);
+    transition:opacity 1.3s cubic-bezier(.16,.6,.2,1),transform 1.3s cubic-bezier(.16,.6,.2,1);
+  }
+  .reveal.is-visible{opacity:1;transform:none;}
+
+  .proj-card{
+    border:1px solid var(--line-strong);border-radius:10px;background:var(--bg-elev);
+    margin-bottom:2.2rem;overflow:hidden;perspective:1000px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    animation:cardGlow 5s ease-in-out infinite;
+  }
+  .proj-card:nth-child(2){animation-delay:.6s;}
+  .proj-card:nth-child(3){animation-delay:1.2s;}
+  @keyframes cardGlow{0%,100%{box-shadow:0 0 0 0 rgba(57,255,136,0);}50%{box-shadow:0 0 24px -4px rgba(57,255,136,.18);}}
+  .proj-card:last-child{margin-bottom:0;}
+  .cursor-blink{display:inline-block;width:.5em;background:var(--green);animation:blinkCur 1s step-end infinite;}
+  @keyframes blinkCur{0%,50%{opacity:1;}50.01%,100%{opacity:0;}}
+  .proj-bar{
+    display:flex;align-items:center;gap:.5rem;padding:.6rem .9rem;background:var(--bg-elev-2);
+    border-bottom:1px solid var(--line-strong);font-size:.78rem;color:var(--ink-faint);
+  }
+  .proj-bar span.dot{width:8px;height:8px;border-radius:50%;background:var(--line-strong);}
+  .proj-bar span.dot:nth-child(1){background:var(--rose);opacity:.6;}
+  .proj-bar span.dot:nth-child(2){background:#fcd34d;opacity:.55;}
+  .proj-bar span.dot:nth-child(3){background:var(--green);opacity:.6;}
+  .proj-body{padding:1.6rem 1.8rem 1.9rem;}
+  .proj-body h3{font-size:1.15rem;font-weight:700;color:var(--ink);}
+  .proj-body h3::before{content:'> ';color:var(--green);}
+  .proj-body ul{margin:1rem 0 0;padding-left:1.1rem;color:var(--ink-dim);font-weight:300;font-size:.92rem;display:flex;flex-direction:column;gap:.6rem;}
+  .proj-body li::marker{color:var(--green);}
+  .chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem;}
+  .chip{font-size:.74rem;border-radius:5px;background:var(--bg-elev-2);color:var(--cyan);padding:.35em .7em;border:1px solid var(--line-strong);}
+  .link-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem;}
+  .badge-ghost{
+    font-size:.78rem;color:var(--green);border:1px solid var(--line-strong);border-radius:6px;
+    padding:.42em .9em;display:inline-flex;align-items:center;gap:.4em;
+  }
+  .badge-ghost:hover{border-color:var(--green);background:rgba(57,255,136,.08);}
+
+  .back-cta{text-align:center;padding-block:clamp(3rem,7vw,4.5rem);}
+  .back-cta a{
+    display:inline-block;border:1px solid var(--line-strong);border-radius:6px;
+    padding:.75em 1.6em;color:var(--green);font-weight:600;
+  }
+  .back-cta a::before{content:'cd ';color:var(--ink-faint);}
+  .back-cta a:hover{border-color:var(--green);background:rgba(57,255,136,.06);}
+
+  footer{text-align:center;padding-block:2rem;font-size:.78rem;color:var(--ink-faint);}
+</style>
+</head>
+<body>
+
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-scan" aria-hidden="true"></div>
+<div class="bg-cols" aria-hidden="true">
+  <span style="animation-duration:38s;">01001 SECURE 10110</span>
+  <span style="animation-duration:33s;animation-delay:-14s;">CVE-2024 PATCHED</span>
+  <span style="animation-duration:46s;animation-delay:-8s;">OWASP CVE PATCH</span>
+  <span style="animation-duration:29s;animation-delay:-5s;">0x4F 0x1A SSRF</span>
+  <span style="animation-duration:41s;animation-delay:-20s;">SCAN · TRIAGE · FIX</span>
+  <span style="animation-duration:36s;animation-delay:-11s;">10110 EXPLOIT 01</span>
+</div>
+<div class="bg-cubes" aria-hidden="true">
+  <div class="hcube hcube-a" style="--size:220px;--half:110px;"><div class="hcube-inner">
+    <div class="hface f-front"></div><div class="hface f-back"></div><div class="hface f-right"></div>
+    <div class="hface f-left"></div><div class="hface f-top"></div><div class="hface f-bottom"></div>
+  </div></div>
+  <div class="hcube hcube-b" style="--size:140px;--half:70px;"><div class="hcube-inner">
+    <div class="hface f-front"></div><div class="hface f-back"></div><div class="hface f-right"></div>
+    <div class="hface f-left"></div><div class="hface f-top"></div><div class="hface f-bottom"></div>
+  </div></div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark">AK</span>Ashutosh</a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="page-hero">
+    <div class="kicker">tech_utsav --list-projects</div>
+    <h1>What I've <span>built (and broken)</span></h1>
+    <p class="lede">// Built for Tech Utsav, Tietoevry's company-wide innovation challenge held every six months — self-initiated and self-built, then shared publicly as open security research.<span class="cursor-blink">&nbsp;</span></p>
+  </section>
+
+  <section>
+    <div class="proj-card reveal tilt">
+      <div class="proj-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>fruit-store-pentest/</div>
+      <div class="proj-body">
+        <h3>Fruit-Store-Pentest</h3>
+        <ul>
+          <li>Designed and built a complete Flask e-commerce application, then independently introduced and exploited 13 real vulnerability instances spanning 10+ OWASP Top 10 categories — SQL injection, stored/reflected XSS, IDOR, CSRF, SSRF, broken access control, insecure file upload, and weak password hashing.</li>
+          <li>Chained a mass-assignment privilege-escalation flaw with an admin-only SSRF endpoint to demonstrate a full multi-step compromise path from a low-privilege account, mirroring a real-world attack chain.</li>
+          <li>Remediated every finding on a parallel patched branch and documented root cause, proof-of-concept, CWE classification, and fix for each vulnerability.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">Flask</span><span class="chip">SQLi</span><span class="chip">XSS</span><span class="chip">IDOR</span><span class="chip">CSRF</span><span class="chip">SSRF</span>
+        </div>
+        <div class="link-row">
+          <a class="badge-ghost" href="https://fruit-store-pentest.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+          <a class="badge-ghost" href="https://github.com/108krishna108/fruit-store-pentest" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal tilt">
+      <div class="proj-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>sensitive-data-guard/</div>
+      <div class="proj-body">
+        <h3>Sensitive-Data-Guard</h3>
+        <ul>
+          <li>Built a Chrome extension and FastAPI backend that detects sensitive-data disclosure in real time across web forms and chat platforms (WhatsApp Web, LinkedIn messaging), using a hybrid rule-based and machine-learning pipeline.</li>
+          <li>Trained and iterated TF-IDF + Logistic Regression classifiers across 15 rounds of dataset and model refinement, reaching up to 98.5% precision / 98.5% recall on a locked regression-test set.</li>
+          <li>Integrated Google Safe Browsing and AbuseIPDB threat-intelligence APIs to assess site and IP reputation before flagging sensitive input.</li>
+          <li>Applied a disciplined evaluation methodology — deduplicated datasets, frozen real-world test sets, and hard-negative tracking — to prevent data leakage and overstated accuracy claims.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">Chrome Extension</span><span class="chip">FastAPI</span><span class="chip">scikit-learn</span><span class="chip">TF-IDF</span>
+        </div>
+        <div class="link-row">
+          <a class="badge-ghost" href="https://github.com/108krishna108/Sensitive-Data-Guard" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+          <a class="badge-ghost" href="https://www.loom.com/share/98ffaa30d86a4ac590763d7433752512" target="_blank" rel="noopener noreferrer">Demo Video ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal tilt">
+      <div class="proj-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>noc-auto-responder/</div>
+      <div class="proj-body">
+        <h3>NOC Auto-Responder</h3>
+        <ul>
+          <li>Built a Python automation tool that monitors a NOC mailbox over IMAP, parses device-down alerts, resolves the affected site's manager contacts and location, and enriches each incident with live weather data.</li>
+          <li>Integrated Google Gemini to draft professional incident notifications, with a guaranteed deterministic template fallback so a notification is never lost to an AI failure.</li>
+          <li>Implemented per-incident error isolation and full audit logging (delivery status, Gemini vs. fallback usage) across the pipeline.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">IMAP</span><span class="chip">Gemini API</span><span class="chip">Automation</span>
+        </div>
+        <div class="link-row">
+          <a class="badge-ghost" href="https://github.com/108krishna108/Noc__auto__responder108" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+          <a class="badge-ghost" href="https://drive.google.com/file/d/1o7Acmb9kYt1wf3YQ3qT6laahlsnbMGVQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Demo Video ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="back-cta">
+    <a href="index.html">~/home</a>
+  </section>
+</main>
+
+<footer>© 2026 Ashutosh Kumar</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        var el = e.target;
+        el.classList.add('is-visible');
+        io.unobserve(el);
+      }
+    });
+  }, { threshold:0.15, rootMargin:'0px 0px -8% 0px' });
+  revealEls.forEach(function(el){ io.observe(el); });
+  if (reduceMotion){ revealEls.forEach(function(el){ el.classList.add('is-visible'); }); }
+
+  if (!reduceMotion && window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.tilt').forEach(function(el){
+      el.addEventListener('pointermove', function(e){
+        el.style.transition = 'none';
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = 'perspective(1000px) rotateX(' + (-py * 5).toFixed(2) + 'deg) rotateY(' + (px * 5).toFixed(2) + 'deg)';
+      });
+      el.addEventListener('pointerleave', function(){
+        el.style.transition = 'transform .3s ease';
+        el.style.transform = '';
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
