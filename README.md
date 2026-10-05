@@ -1,6 +1,6 @@
 # Ashutosh Kumar — Portfolio
 
-Personal portfolio site for Ashutosh Kumar, Security Analyst (SOC Operations & Application Security). The homepage is a single-page, dark-themed overview covering summary, skills, experience, independent security projects, certifications, and contact details, with light 3D touches (tilt-on-hover cards, an animated background) and a real résumé link. Each of those sections also has its own dedicated deep-dive page with a distinct font and background theme, reachable from the nav bar.
+Personal portfolio site for Ashutosh Kumar, Security Analyst (SOC Operations & Application Security). The homepage is a single-page, dark cyber/terminal-themed overview (JetBrains Mono, a falling-code canvas background, glitch-text heading, a typewriter line) covering summary, skills, experience, independent security projects, certifications, and contact details, with hover-tilt cards and scroll-reveal animation, plus a real résumé link. Each of those sections also has its own dedicated deep-dive page with its own distinct font and background theme, reachable from the nav bar.
 
 **Live site:** _add your Render URL here once deployed_
 
@@ -9,7 +9,7 @@ Personal portfolio site for Ashutosh Kumar, Security Analyst (SOC Operations & A
 This is a static site — no build step, no dependencies, no framework.
 
 ```
-index.html           Homepage: Hero, About, Skills, Experience, Projects, Certifications, Contact (full scroll overview)
+index.html           Homepage: Hero, About, Skills, Experience, Projects, Certifications, Contact (full scroll overview) — "cyber/terminal" theme (JetBrains Mono + Manrope, green, matrix-rain canvas)
 skills.html           Dedicated Skills page — "constellation" theme (Sora font, blue/violet)
 experience.html       Dedicated Experience page — "signal timeline" theme (Space Grotesk font, gold/violet)
 projects.html         Dedicated Projects page — "terminal/hacker" theme (JetBrains Mono font, green)
@@ -18,7 +18,7 @@ contact.html          Dedicated Contact page — "radar/beacon" theme (Outfit fo
 photo.png             Headshot used in the hero and About sections
 ```
 
-Every page is self-contained (markup, styles, and scripts inline) and shares the same animated circuit/grid/floating-cube background system as the homepage, recolored to each page's accent. Fonts load over Google Fonts at runtime; everything else is local.
+Every page is self-contained (markup, styles, and scripts inline). The five dedicated pages share the same animated circuit/grid/floating-cube background system, recolored to each page's own accent; the homepage instead runs its own matrix-rain canvas background to match its cyber/terminal theme. Fonts load over Google Fonts at runtime; everything else is local.
 
 ## Navigation model
 
