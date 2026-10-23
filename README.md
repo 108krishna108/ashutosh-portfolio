@@ -1,6 +1,6 @@
 # Ashutosh Kumar — Portfolio
 
-Personal portfolio site for Ashutosh Kumar, Security Analyst (SOC Operations & Application Security). The homepage is a single-page, dark cyber/terminal-themed overview (JetBrains Mono, a falling-code canvas background, glitch-text heading, a typewriter line) covering summary, skills, experience, independent security projects, certifications, and contact details, with hover-tilt cards and scroll-reveal animation, plus a real résumé link. Each of those sections also has its own dedicated deep-dive page with its own distinct font and background theme, reachable from the nav bar.
+Personal portfolio site for Ashutosh Kumar, SOC Analyst (Incident Response · Threat Detection · Application Security). The homepage is a single-page, dark cyber/terminal-themed overview (JetBrains Mono, a falling-code canvas background, glitch-text heading, a typewriter line) covering summary, skills, experience, independent security projects, certifications, and contact details, with hover-tilt cards and scroll-reveal animation, plus a real résumé link. Each of those sections also has its own dedicated deep-dive page with its own distinct font and background theme, reachable from the nav bar.
 
 **Live site:** _add your Render URL here once deployed_
 
