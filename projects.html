@@ -164,6 +164,8 @@
   .back-cta a:hover{border-color:var(--green);background:rgba(57,255,136,.06);}
 
   footer{text-align:center;padding-block:2rem;font-size:.78rem;color:var(--ink-faint);}
+  /* nav-phone-fix */
+  @media (max-width:760px){.nav-inner{flex-wrap:wrap;}.nav-links{order:3;width:100%;overflow-x:auto;scrollbar-width:none;}.nav-links a{flex:none;}}
 </style>
 </head>
 <body>
@@ -200,7 +202,7 @@
       <a href="projects.html">Projects</a>
       <a href="certifications.html">Certifications</a>
     </div>
-    <a class="nav-cta" href="contact.html">Contact</a>
+    <div style="display:flex;gap:.6rem;flex:none;"><a class="nav-cta" href="https://drive.google.com/file/d/1drTIZ5bHmuhX8sQoKKMVmMJmAPo-tbUe/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Resume</a><a class="nav-cta" href="contact.html">Contact</a></div>
   </div>
 </nav>
 
@@ -258,6 +260,7 @@
         <ul>
           <li>Built a Python automation tool that monitors a NOC mailbox over IMAP, parses device-down alerts, resolves the affected site's manager contacts and location, and enriches each incident with live weather data.</li>
           <li>Integrated Google Gemini to draft professional incident notifications, with a guaranteed deterministic template fallback so a notification is never lost to an AI failure.</li>
+          <li>Production automation that cut alert handling from ~15 to ~3 minutes (80% faster).</li>
           <li>Implemented per-incident error isolation and full audit logging (delivery status, Gemini vs. fallback usage) across the pipeline.</li>
         </ul>
         <div class="chip-row">

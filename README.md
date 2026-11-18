@@ -1,8 +1,8 @@
 # Ashutosh Kumar — Portfolio
 
-Personal portfolio site for Ashutosh Kumar, SOC Analyst (Incident Response · Threat Detection · Application Security). The homepage is a single-page, dark cyber/terminal-themed overview (JetBrains Mono, a falling-code canvas background, glitch-text heading, a typewriter line) covering summary, skills, experience, independent security projects, certifications, and contact details, with hover-tilt cards and scroll-reveal animation, plus a real résumé link. Each of those sections also has its own dedicated deep-dive page with its own distinct font and background theme, reachable from the nav bar.
+Personal portfolio site for Ashutosh Kumar, SOC Analyst (Incident Response · Threat Hunting · Phishing & Identity Defense · Security Automation). The homepage is a single-page, dark cyber/terminal-themed overview (JetBrains Mono, a falling-code canvas background, glitch-text heading, a typewriter line) covering summary, skills, experience, independent security projects, certifications, and contact details, with hover-tilt cards and scroll-reveal animation, plus a real résumé link. Each of those sections also has its own dedicated deep-dive page with its own distinct font and background theme, reachable from the nav bar.
 
-**Live site:** _add your Render URL here once deployed_
+**Live site:** https://ashutosh-portfolio-3x68.onrender.com/
 
 ## Structure
 
@@ -19,6 +19,20 @@ photo.png             Headshot used in the hero and About sections
 ```
 
 Every page is self-contained (markup, styles, and scripts inline). The five dedicated pages share the same animated circuit/grid/floating-cube background system, recolored to each page's own accent; the homepage instead runs its own matrix-rain canvas background to match its cyber/terminal theme. Fonts load over Google Fonts at runtime; everything else is local.
+
+## Role-specific portfolios
+
+Each résumé links to its own portfolio. The portfolios do not link to each other.
+
+| Résumé | Path | Source |
+|---|---|---|
+| Cyber Security | `/` (`/cyber-security/` redirects there) | Root HTML pages, edited by hand |
+| Software Engineer | `/software-engineer/` | `_profiles/data/software-engineer.json` |
+| AI/ML Engineer | `/ai-ml-engineer/` | `_profiles/data/ai-ml-engineer.json` |
+| Data Analyst | `/data-analyst/` | `_profiles/data/data-analyst.json` |
+| SDET | `/sdet/` | `_profiles/data/sdet.json` |
+
+Contact details, project links, certificates and education for the four generated portfolios live in `_profiles/data/shared.json`, and each design lives in `_profiles/themes/`. To add a résumé link, set `resume_url` in that profile's JSON file. After any change, run `python _profiles/build.py` and commit the regenerated `<slug>/index.html`.
 
 ## Navigation model
 

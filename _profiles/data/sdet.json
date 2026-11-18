@@ -1,0 +1,121 @@
+{
+  "slug": "sdet",
+  "title": "SDET",
+  "tagline": ["Test Automation", "API Testing", "Security Testing", "Python", "CI/CD"],
+  "intro": "I design, build and test automation in Python and PowerShell, covering failure paths, API integrations and web application security.",
+  "resume_url": "https://drive.google.com/file/d/1w16ZoLhBtQPsL9_IGlpdGsKBTIjuJkCu/view?usp=drive_link",
+  "show_linkedin": false,
+  "metrics": [
+    { "value": "0", "label": "missed alerts" },
+    { "value": "0", "label": "accounts changed in error" },
+    { "value": "100%", "label": "of fixes retested" },
+    { "value": "10+", "label": "OWASP Top 10 classes tested" }
+  ],
+  "checks": [
+    "test_every_automation_covers_3_paths",
+    "test_4_negative_scenarios_before_release",
+    "test_noc_responder_missed_alerts_is_0",
+    "test_bulk_ops_accounts_changed_in_error_is_0",
+    "test_integrations_across_4_platforms",
+    "test_defect_fixes_retested_is_100_percent"
+  ],
+  "skills": [
+    { "name": "Test Automation", "items": ["Python", "Pytest", "Selenium WebDriver", "Playwright", "Page Object Model", "data-driven testing"] },
+    { "name": "API Testing", "items": ["Postman", "REST APIs", "Python requests", "schema and response validation", "FastAPI/Flask test clients"] },
+    { "name": "Security Testing", "items": ["OWASP Top 10", "VAPT", "SQL Injection", "XSS", "CSRF", "IDOR", "SSRF", "Broken Access Control"] },
+    { "name": "Test Practices", "items": ["test planning", "test case design", "regression", "smoke and negative testing", "bug reporting", "RCA"] },
+    { "name": "CI/CD & Tools", "items": ["Git", "GitHub Actions", "Jenkins basics", "ServiceNow", "Jira-style defect tracking"] },
+    { "name": "Languages", "items": ["Python", "JavaScript", "Java", "SQL", "PowerShell"] }
+  ],
+  "experience": [
+    {
+      "role": "Software Engineer – Automation & Testing",
+      "company": "Tietoevry India Pvt Ltd",
+      "location": "Gurugram",
+      "dates": "Aug 2024 – Oct 2026",
+      "groups": [
+        {
+          "title": "Test Automation & Quality Engineering",
+          "bullets": [
+            "Owned the design, build and testing of Python and PowerShell automation for **2 years** in a **24x7** operations team processing **30–40 tickets a day (~700 a month)**.",
+            "Tested every automation across **3 paths** (success, failure, edge cases) and **4 negative scenarios** (invalid input, missing data, API error, timeout) before production release.",
+            "Built failure-path tests for the LLM-based NOC Auto-Responder and a template fallback, keeping the tool at **0 missed alerts** while saving **~12 minutes per alert**.",
+            "Validated bulk-operation scripts with dry runs, logging and rollback checks, saving **~27 minutes per run** with **0 accounts changed in error**."
+          ]
+        },
+        {
+          "title": "API & Integration Testing",
+          "bullets": [
+            "Tested end-to-end integrations across **4 enterprise platforms** (ServiceNow, CrowdStrike, Google SecOps, Entra ID), verifying requests, responses and resulting actions.",
+            "Verified data from **3 external sources** (site directory, manager lookup, live weather API) feeding automated notifications, handling bursts of **2–5 alerts at once**."
+          ]
+        },
+        {
+          "title": "Security Testing (VAPT)",
+          "bullets": [
+            "Supported senior testers on VAPT of live web applications, executing test cases across **10+ OWASP Top 10 classes**, including **6 core attacks** (SQLi, XSS, CSRF, IDOR, SSRF, broken access control).",
+            "Logged every defect with **4 artefacts** (severity, reproduction steps, PoC, CWE mapping) and retested **100% of fixes** before closure.",
+            "Root-caused recurring production issues to **3 sources**, stopping repeat tickets at the source."
+          ]
+        }
+      ],
+      "achievements": [
+        "Cut alert handling from **~15 to ~3 minutes (80% faster)** with a tested Python + Gemini automation tool.",
+        "Replaced **~30 minutes of manual work with a ~3-minute script run (90% faster)** for bulk account operations."
+      ]
+    },
+    {
+      "role": "Software Development Intern",
+      "company": "PG-Technology Pvt Ltd",
+      "location": "Punjab",
+      "dates": "Feb 2023 – May 2023",
+      "groups": [{ "title": "", "bullets": ["Built and tested web app features on the MERN stack (MongoDB, Express, React, Node.js)."] }],
+      "achievements": []
+    },
+    {
+      "role": "Software Development Intern",
+      "company": "Persistent Systems",
+      "location": "Mohali",
+      "dates": "Mar 2022 – Jun 2022",
+      "groups": [{ "title": "", "bullets": ["Built backend modules with Node.js and MongoDB using OOP principles."] }],
+      "achievements": []
+    },
+    {
+      "role": "Freelance Usability Tester",
+      "company": "UserTesting.com",
+      "location": "",
+      "dates": "Feb 2022 – Aug 2024",
+      "groups": [
+        {
+          "title": "",
+          "bullets": [
+            "Completed paid usability and feedback tests evaluating websites and applications, providing structured, detailed feedback under platform confidentiality terms.",
+            "Completed **25+ tests**, maintaining a consistent quality and completion record."
+          ]
+        }
+      ],
+      "achievements": []
+    }
+  ],
+  "projects": [
+    {
+      "key": "fruit",
+      "tags": ["Flask", "Python", "Security Testing"],
+      "bullets": ["Built an e-commerce app and tested it end to end: found **13 defects across 10+ OWASP categories**, wrote reproduction steps and PoCs, mapped each to CWE and verified 100% of fixes."]
+    },
+    {
+      "key": "sdg",
+      "tags": ["FastAPI", "ML", "Chrome Extension"],
+      "bullets": [
+        "Evaluated the detection model over 15 test rounds to reach **98.5% precision and recall**.",
+        "Tested backend and extension across real web forms and AI chat tools."
+      ]
+    },
+    {
+      "key": "noc",
+      "tags": ["Python", "IMAP", "Gemini API"],
+      "bullets": ["Production tool with tested fallback logic.", "**80% faster** alert handling and zero missed alerts."]
+    }
+  ],
+  "certificates": ["security", "internships", "python"]
+}

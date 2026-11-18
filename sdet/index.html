@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Ashutosh Kumar — SDET</title>
+<meta name="description" content="Ashutosh Kumar, SDET. I design, build and test automation in Python and PowerShell, covering failure paths, API integrations and web application security.">
+<script>document.documentElement.className='js'</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500;600&display=swap">
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;}
+body{margin:0;overflow-x:hidden;}
+@supports (overflow:clip){html,body{overflow-x:clip;}}
+a{color:inherit;text-decoration:none;}
+p,h1,h2,h3,h4,ul,ol,figure{margin:0;}
+ul,ol{padding:0;}
+img{display:block;max-width:100%;}
+a:focus-visible,summary:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:3px;}
+#ambient{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;}
+
+/* scroll-in, matching the Cyber Security portfolio */
+.js .reveal{opacity:0;}
+.js .reveal.is-visible{opacity:1;animation:revealLeft 1.6s cubic-bezier(.16,.6,.2,1) backwards;}
+.js .reveal.right.is-visible{animation-name:revealRight;}
+.js .reveal.up.is-visible{animation-name:revealUp;}
+@keyframes revealLeft{from{opacity:0;transform:translateX(-140px);}}
+@keyframes revealRight{from{opacity:0;transform:translateX(140px);}}
+@keyframes revealUp{from{opacity:0;transform:translateY(60px);}}
+.tilt{transform-style:preserve-3d;}
+
+/* floating skill badges */
+.chips,.tags,td{perspective:800px;}
+.chip{display:inline-block;animation:wobble3d 7s ease-in-out infinite;}
+.chip:nth-child(2n){animation-delay:.3s;animation-duration:6.5s;}
+.chip:nth-child(3n){animation-delay:.6s;animation-duration:8s;}
+.chip:nth-child(4n){animation-delay:.15s;animation-duration:7.4s;}
+.chip:nth-child(5n){animation-delay:.45s;animation-duration:6.8s;}
+@keyframes wobble3d{0%,100%{transform:translateY(0) rotateY(-10deg);}50%{transform:translateY(-4px) rotateY(10deg);}}
+
+/* timeline pulse on each job */
+.job{position:relative;}
+.job::before{content:'';position:absolute;left:-6px;top:30px;width:10px;height:10px;border-radius:50%;color:var(--ping,#888);background:currentColor;animation:jobPing 2.4s ease-out infinite;}
+@keyframes jobPing{0%{box-shadow:0 0 0 0 currentColor;}70%,100%{box-shadow:0 0 0 9px transparent;}}
+
+/* glitching name and glowing photo, matching the Cyber Security hero */
+.glitch{position:relative;}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;background:none;clip-path:inset(0 0 100% 0);}
+.glitch::before{left:3px;color:var(--g1,#f472b6);-webkit-text-fill-color:var(--g1,#f472b6);animation:glitchTop 4.5s infinite linear alternate-reverse;}
+.glitch::after{left:-3px;color:var(--g2,#67e8f9);-webkit-text-fill-color:var(--g2,#67e8f9);animation:glitchBot 4.5s infinite linear alternate-reverse;}
+@keyframes glitchTop{0%,92%,100%{clip-path:inset(0 0 100% 0);}93%{clip-path:inset(10% 0 60% 0);}95%{clip-path:inset(40% 0 20% 0);}97%{clip-path:inset(70% 0 5% 0);}}
+@keyframes glitchBot{0%,90%,100%{clip-path:inset(100% 0 0 0);}91%{clip-path:inset(60% 0 15% 0);}94%{clip-path:inset(20% 0 55% 0);}98%{clip-path:inset(5% 0 80% 0);}}
+.avatar{animation:avatarGlow 3.2s ease-in-out infinite;}
+.js .avatar.reveal.right.is-visible{animation:revealRight 1.6s cubic-bezier(.16,.6,.2,1) backwards,avatarGlow 3.2s ease-in-out infinite;}
+@keyframes avatarGlow{0%,100%{box-shadow:0 14px 34px -16px var(--ping,#888);}50%{box-shadow:0 18px 52px -8px var(--ping,#888);}}
+
+/* typewriter cursor on the intro line */
+.type-cursor{display:inline-block;width:.5em;height:1em;margin-left:2px;vertical-align:-.12em;background:var(--ping,currentColor);animation:typeBlink 1s step-end infinite;}
+@keyframes typeBlink{50%{opacity:0;}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+}
+:root{
+  --bg:#15120f;--panel:#1f1a15;--panel-2:#29221b;--line:#3b3127;--ink:#f6efe6;--dim:#c5b8a7;--faint:#94866f;
+  --amber:#f5a524;--pass:#5eead4;--pass-bg:#10312d;--red:#fb7185;
+  --mono:'Fira Code',ui-monospace,Consolas,monospace;--sans:'DM Sans',ui-sans-serif,system-ui,sans-serif;
+  --ping:#5eead4;--g1:#f5a524;--g2:#5eead4;
+}
+body{background-color:var(--bg);background-image:repeating-linear-gradient(135deg,rgba(245,165,36,.028) 0 2px,transparent 2px 18px);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.65;}
+::selection{background:var(--amber);color:#1b1205;}
+.pipeline{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:22px;padding:11px clamp(16px,4vw,40px);background:rgba(21,18,15,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.brand{font-family:var(--mono);font-weight:600;}
+.brand span{color:var(--amber);}
+.pipe-resume{flex:none;padding:5px 12px;border-radius:5px;background:var(--amber);color:#1b1205;font-family:var(--mono);font-size:.76rem;font-weight:600;}
+.pipe-resume:hover{background:#ffc05a;}
+.pipeline nav{flex:1;min-width:0;display:flex;justify-content:flex-end;align-items:center;font-family:var(--mono);font-size:.76rem;color:var(--faint);}
+.pipeline nav a{position:relative;flex:none;display:flex;align-items:center;gap:7px;padding:3px 12px;}
+.pipeline nav a+a::before{content:'';position:absolute;left:-7px;width:14px;height:1px;background:var(--line);}
+.pipeline nav i{width:10px;height:10px;border:2px solid var(--faint);border-radius:50%;}
+.pipeline nav a:hover{color:var(--ink);}
+.pipeline nav a.active{color:var(--amber);}
+.pipeline nav a.active i{border-color:var(--amber);background:var(--amber);box-shadow:0 0 0 4px rgba(245,165,36,.2);}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;}
+.progress i{display:block;height:100%;width:100%;background:var(--amber);transform:scaleX(0);transform-origin:left;}
+main{width:min(1080px,calc(100% - 32px));margin-inline:auto;}
+section{padding-block:clamp(44px,7vw,72px);border-bottom:1px dashed var(--line);}
+#contact{border-bottom:0;}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:clamp(28px,5vw,56px);min-height:calc(100vh - 170px);border-bottom:0;padding-bottom:30px;}
+.build{display:inline-flex;align-items:center;gap:8px;padding:4px 11px;border:1px solid #2c6a60;border-radius:5px;background:var(--pass-bg);font-family:var(--mono);font-size:.74rem;color:var(--pass);}
+.build i{width:7px;height:7px;border-radius:50%;background:var(--pass);}
+h1{margin-top:16px;font-size:clamp(2.7rem,6.5vw,4.5rem);font-weight:700;line-height:1.02;letter-spacing:-.04em;}
+.role{margin-top:10px;font-family:var(--mono);font-size:1.3rem;font-weight:600;color:var(--amber);}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;}
+.chip{padding:3px 10px;border:1px solid var(--line);border-radius:4px;background:var(--panel-2);font-family:var(--mono);font-size:.74rem;color:var(--dim);}
+.intro{max-width:54ch;margin-top:16px;color:var(--dim);font-size:1.07rem;}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+.btn{padding:9px 16px;border:1px solid var(--line);border-radius:5px;background:var(--panel);font-family:var(--mono);font-size:.8rem;font-weight:500;transition:border-color .2s,transform .2s;}
+.btn:hover{border-color:var(--amber);transform:translateY(-2px);}
+.btn.primary{background:var(--amber);border-color:var(--amber);color:#1b1205;font-weight:600;}
+.side{position:relative;min-width:0;}
+.avatar{position:absolute;top:-52px;right:14px;z-index:2;width:104px;height:104px;object-fit:cover;object-position:top;border:3px solid var(--amber);border-radius:12px;background:var(--panel);}
+.terminal{border:1px solid var(--line);border-radius:10px;background:#0e0c0a;box-shadow:12px 12px 0 rgba(245,165,36,.13);overflow:hidden;font-family:var(--mono);font-size:.74rem;}
+.t-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:var(--panel-2);color:var(--faint);}
+.t-bar i{width:9px;height:9px;border-radius:50%;background:var(--red);}
+.t-bar i:nth-child(2){background:var(--amber);}
+.t-bar i:nth-child(3){background:var(--pass);}
+.t-bar span{margin-left:8px;}
+.t-body{display:grid;gap:7px;padding:16px 14px;}
+.t-cmd{color:var(--amber);}
+.t-line{display:flex;justify-content:space-between;gap:12px;color:var(--dim);overflow-wrap:anywhere;animation:line .35s both;animation-delay:calc(var(--i) * .42s + .35s);}
+.t-line span{min-width:0;}
+.t-line b{flex:none;color:var(--pass);font-weight:600;}
+.t-sum{margin-top:5px;padding:5px;border-radius:4px;background:var(--pass-bg);text-align:center;font-weight:600;color:var(--pass);animation:line .35s both;animation-delay:calc(var(--i) * .42s + .35s);}
+@keyframes line{from{opacity:0;transform:translateX(-8px);}}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-bottom:44px;border-bottom:1px dashed var(--line);}
+.metric{padding:16px;border:1px solid var(--line);border-top:3px solid var(--pass);border-radius:6px;background:var(--panel);}
+.metric strong{display:block;font-family:var(--mono);font-size:1.9rem;line-height:1.2;color:var(--pass);}
+.metric span{font-size:.85rem;color:var(--dim);}
+.stage{font-family:var(--mono);font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--amber);}
+h2{margin:4px 0 24px;font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.15;letter-spacing:-.025em;}
+h3{font-size:1.1rem;line-height:1.35;}
+.suite-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.suite{padding:17px;border:1px solid var(--line);border-radius:7px;background:var(--panel);}
+.suite h3{display:flex;align-items:center;gap:9px;}
+.suite em{margin-left:auto;font-family:var(--mono);font-size:.74rem;font-style:normal;color:var(--faint);}
+.tick{width:21px;height:21px;flex:none;display:grid;place-items:center;border-radius:50%;background:var(--pass-bg);font-size:.72rem;color:var(--pass);}
+.job{margin-bottom:16px;padding:clamp(16px,3vw,24px);border:1px solid var(--line);border-radius:8px;background:var(--panel);}
+.job header{display:flex;justify-content:space-between;gap:14px;}
+.job header p{font-size:.93rem;color:var(--dim);}
+.badge{height:max-content;padding:3px 9px;border-radius:4px;background:var(--panel-2);font-family:var(--mono);font-size:.73rem;color:var(--amber);white-space:nowrap;}
+.group{margin-top:15px;border:1px solid var(--line);border-radius:6px;background:#191511;}
+.group summary{display:flex;justify-content:space-between;gap:12px;padding:10px 14px;cursor:pointer;font-weight:700;}
+.group summary em{font-family:var(--mono);font-size:.72rem;font-style:normal;color:var(--pass);white-space:nowrap;}
+.group .checks{padding:0 14px 14px;margin-top:2px;}
+.checks{list-style:none;display:grid;gap:9px;margin-top:13px;color:var(--dim);}
+.checks li{position:relative;padding-left:25px;}
+.checks li::before{content:'✓';position:absolute;left:0;top:.2em;width:17px;height:17px;display:grid;place-items:center;border-radius:50%;background:var(--pass-bg);font-size:.62rem;color:var(--pass);}
+strong{color:var(--ink);font-weight:700;}
+.wins{margin-top:16px;padding:14px;border:1px solid #6b4a14;border-radius:6px;background:#2b1f0e;}
+.wins h4{font-family:var(--mono);font-size:.8rem;color:var(--amber);}
+.proj-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.proj{position:relative;display:flex;flex-direction:column;padding:19px;border:1px solid var(--line);border-radius:8px;background:var(--panel);transition:transform .2s,border-color .2s;}
+.proj:hover{transform:translateY(-4px);border-color:var(--amber);}
+.pass{width:max-content;margin-bottom:11px;padding:1px 8px;border-radius:3px;background:var(--pass-bg);font-family:var(--mono);font-size:.68rem;font-weight:600;color:var(--pass);}
+.plinks{display:flex;flex-wrap:wrap;gap:14px;margin-top:auto;padding-top:15px;}
+.plink{font-family:var(--mono);font-size:.78rem;color:var(--amber);}
+.plink:hover{text-decoration:underline;}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+.cert,.edu{display:flex;flex-direction:column;gap:4px;padding:16px;border:1px solid var(--line);border-radius:7px;background:var(--panel);font-size:.91rem;color:var(--dim);}
+.cert:hover{border-color:var(--amber);}
+.cert-year,.edu-years{font-family:var(--mono);font-size:.74rem;color:var(--amber);}
+.cert-open{margin-top:auto;padding-top:7px;font-family:var(--mono);font-size:.74rem;color:var(--pass);}
+.edu-score{font-family:var(--mono);font-size:.8rem;color:var(--pass);}
+.contact-list{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.contact-list a{display:flex;flex-direction:column;padding:13px 16px;border:1px solid var(--line);border-radius:7px;background:var(--panel);overflow-wrap:anywhere;}
+.contact-list a:hover{border-color:var(--amber);}
+.contact-list span{font-family:var(--mono);font-size:.72rem;color:var(--amber);}
+footer{padding-block:24px;text-align:center;font-size:.83rem;color:var(--faint);}
+@media (max-width:1100px){
+  .pipeline nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;}
+  .hero{grid-template-columns:minmax(0,1fr);min-height:0;}
+  .side{margin-top:44px;}
+  .proj-grid,.cards{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:620px){
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .suite-grid,.proj-grid,.cards,.contact-list{grid-template-columns:minmax(0,1fr);}
+  .job header{flex-direction:column;gap:8px;}
+  .badge{width:max-content;}
+  .t-line{font-size:.66rem;}
+}
+</style>
+</head>
+<body>
+<canvas id="ambient" aria-hidden="true"></canvas>
+
+<header class="pipeline"><a class="brand" href="#summary">AK<span>/qa</span></a><nav aria-label="Sections"><a href="#summary" data-spy><i aria-hidden="true"></i>Summary</a><a href="#skills" data-spy><i aria-hidden="true"></i>Skills</a><a href="#experience" data-spy><i aria-hidden="true"></i>Experience</a><a href="#projects" data-spy><i aria-hidden="true"></i>Projects</a><a href="#credentials" data-spy><i aria-hidden="true"></i>Credentials</a><a href="#contact" data-spy><i aria-hidden="true"></i>Contact</a></nav><a class="pipe-resume" href="https://drive.google.com/file/d/1w16ZoLhBtQPsL9_IGlpdGsKBTIjuJkCu/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Resume</a><div class="progress" aria-hidden="true"><i id="progress"></i></div></header>
+<main>
+  <section id="summary" class="hero">
+    <div>
+      <p class="build"><i aria-hidden="true"></i>Available Immediately · Gurugram, Haryana, India</p>
+      <h1>Ashutosh Kumar</h1>
+      <p class="role">SDET</p>
+      <div class="chips"><span class="chip">Test Automation</span><span class="chip">API Testing</span><span class="chip">Security Testing</span><span class="chip">Python</span><span class="chip">CI/CD</span></div>
+      <p class="intro">I design, build and test automation in Python and PowerShell, covering failure paths, API integrations and web application security.</p>
+      <div class="actions"><a class="btn primary" href="https://drive.google.com/file/d/1w16ZoLhBtQPsL9_IGlpdGsKBTIjuJkCu/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View Resume</a><a class="btn" href="#experience">View test record</a><a class="btn" href="#contact">Contact</a></div>
+    </div>
+    <div class="side">
+      <img class="avatar" src="../photo.png" alt="Portrait of Ashutosh Kumar" width="120" height="120">
+      <div class="terminal" role="img" aria-label="Test run summary: 6 checks passed">
+        <div class="t-bar"><i></i><i></i><i></i><span>career_test_report</span></div>
+        <div class="t-body"><div class="t-cmd">$ pytest career/ -v</div><div class="t-line" style="--i:0"><span>test_every_automation_covers_3_paths</span><b>PASSED</b></div><div class="t-line" style="--i:1"><span>test_4_negative_scenarios_before_release</span><b>PASSED</b></div><div class="t-line" style="--i:2"><span>test_noc_responder_missed_alerts_is_0</span><b>PASSED</b></div><div class="t-line" style="--i:3"><span>test_bulk_ops_accounts_changed_in_error_is_0</span><b>PASSED</b></div><div class="t-line" style="--i:4"><span>test_integrations_across_4_platforms</span><b>PASSED</b></div><div class="t-line" style="--i:5"><span>test_defect_fixes_retested_is_100_percent</span><b>PASSED</b></div><div class="t-sum" style="--i:6">6 passed</div></div>
+      </div>
+    </div>
+  </section>
+  <div class="metrics"><div class="metric reveal"><strong>0</strong><span>missed alerts</span></div><div class="metric reveal"><strong>0</strong><span>accounts changed in error</span></div><div class="metric reveal"><strong>100%</strong><span>of fixes retested</span></div><div class="metric reveal"><strong>10+</strong><span>OWASP Top 10 classes tested</span></div></div>
+  <section id="skills"><p class="stage">Stage 01</p><h2>Skills</h2><div class="suite-grid"><article class="suite reveal"><h3><span class="tick" aria-hidden="true">✓</span>Test Automation<em>6</em></h3><div class="chips"><span class="chip">Python</span><span class="chip">Pytest</span><span class="chip">Selenium WebDriver</span><span class="chip">Playwright</span><span class="chip">Page Object Model</span><span class="chip">data-driven testing</span></div></article><article class="suite reveal"><h3><span class="tick" aria-hidden="true">✓</span>API Testing<em>5</em></h3><div class="chips"><span class="chip">Postman</span><span class="chip">REST APIs</span><span class="chip">Python requests</span><span class="chip">schema and response validation</span><span class="chip">FastAPI/Flask test clients</span></div></article><article class="suite reveal"><h3><span class="tick" aria-hidden="true">✓</span>Security Testing<em>8</em></h3><div class="chips"><span class="chip">OWASP Top 10</span><span class="chip">VAPT</span><span class="chip">SQL Injection</span><span class="chip">XSS</span><span class="chip">CSRF</span><span class="chip">IDOR</span><span class="chip">SSRF</span><span class="chip">Broken Access Control</span></div></article><article class="suite reveal"><h3><span class="tick" aria-hidden="true">✓</span>Test Practices<em>6</em></h3><div class="chips"><span class="chip">test planning</span><span class="chip">test case design</span><span class="chip">regression</span><span class="chip">smoke and negative testing</span><span class="chip">bug reporting</span><span class="chip">RCA</span></div></article><article class="suite reveal"><h3><span class="tick" aria-hidden="true">✓</span>CI/CD &amp; Tools<em>5</em></h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub Actions</span><span class="chip">Jenkins basics</span><span class="chip">ServiceNow</span><span class="chip">Jira-style defect tracking</span></div></article><article class="suite reveal"><h3><span class="tick" aria-hidden="true">✓</span>Languages<em>5</em></h3><div class="chips"><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">PowerShell</span></div></article></div></section>
+  <section id="experience"><p class="stage">Stage 02</p><h2>Experience</h2><article class="job reveal"><header><div><h3>Software Engineer – Automation &amp; Testing</h3><p>Tietoevry India Pvt Ltd · Gurugram</p></div><span class="badge">Aug 2024 – Oct 2026</span></header><details class="group" open><summary><span>Test Automation &amp; Quality Engineering</span><em>4 checks</em></summary><ul class="checks"><li>Owned the design, build and testing of Python and PowerShell automation for <strong>2 years</strong> in a <strong>24x7</strong> operations team processing <strong>30–40 tickets a day (~700 a month)</strong>.</li><li>Tested every automation across <strong>3 paths</strong> (success, failure, edge cases) and <strong>4 negative scenarios</strong> (invalid input, missing data, API error, timeout) before production release.</li><li>Built failure-path tests for the LLM-based NOC Auto-Responder and a template fallback, keeping the tool at <strong>0 missed alerts</strong> while saving <strong>~12 minutes per alert</strong>.</li><li>Validated bulk-operation scripts with dry runs, logging and rollback checks, saving <strong>~27 minutes per run</strong> with <strong>0 accounts changed in error</strong>.</li></ul></details><details class="group" open><summary><span>API &amp; Integration Testing</span><em>2 checks</em></summary><ul class="checks"><li>Tested end-to-end integrations across <strong>4 enterprise platforms</strong> (ServiceNow, CrowdStrike, Google SecOps, Entra ID), verifying requests, responses and resulting actions.</li><li>Verified data from <strong>3 external sources</strong> (site directory, manager lookup, live weather API) feeding automated notifications, handling bursts of <strong>2–5 alerts at once</strong>.</li></ul></details><details class="group" open><summary><span>Security Testing (VAPT)</span><em>3 checks</em></summary><ul class="checks"><li>Supported senior testers on VAPT of live web applications, executing test cases across <strong>10+ OWASP Top 10 classes</strong>, including <strong>6 core attacks</strong> (SQLi, XSS, CSRF, IDOR, SSRF, broken access control).</li><li>Logged every defect with <strong>4 artefacts</strong> (severity, reproduction steps, PoC, CWE mapping) and retested <strong>100% of fixes</strong> before closure.</li><li>Root-caused recurring production issues to <strong>3 sources</strong>, stopping repeat tickets at the source.</li></ul></details><div class="wins"><h4>Key achievements</h4><ul class="checks"><li>Cut alert handling from <strong>~15 to ~3 minutes (80% faster)</strong> with a tested Python + Gemini automation tool.</li><li>Replaced <strong>~30 minutes of manual work with a ~3-minute script run (90% faster)</strong> for bulk account operations.</li></ul></div></article><article class="job reveal"><header><div><h3>Software Development Intern</h3><p>PG-Technology Pvt Ltd · Punjab</p></div><span class="badge">Feb 2023 – May 2023</span></header><ul class="checks"><li>Built and tested web app features on the MERN stack (MongoDB, Express, React, Node.js).</li></ul></article><article class="job reveal"><header><div><h3>Software Development Intern</h3><p>Persistent Systems · Mohali</p></div><span class="badge">Mar 2022 – Jun 2022</span></header><ul class="checks"><li>Built backend modules with Node.js and MongoDB using OOP principles.</li></ul></article><article class="job reveal"><header><div><h3>Freelance Usability Tester</h3><p>UserTesting.com</p></div><span class="badge">Feb 2022 – Aug 2024</span></header><ul class="checks"><li>Completed paid usability and feedback tests evaluating websites and applications, providing structured, detailed feedback under platform confidentiality terms.</li><li>Completed <strong>25+ tests</strong>, maintaining a consistent quality and completion record.</li></ul></article></section>
+  <section id="projects"><p class="stage">Stage 03</p><h2>Projects</h2><div class="proj-grid"><article class="proj reveal"><span class="pass">PASS</span><h3>Fruit-Store-Pentest</h3><div class="chips"><span class="chip">Flask</span><span class="chip">Python</span><span class="chip">Security Testing</span></div><ul class="checks"><li>Built an e-commerce app and tested it end to end: found <strong>13 defects across 10+ OWASP categories</strong>, wrote reproduction steps and PoCs, mapped each to CWE and verified 100% of fixes.</li></ul><div class="plinks"><a class="plink" href="https://fruit-store-pentest.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a><a class="plink" href="https://github.com/108krishna108/fruit-store-pentest" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></article><article class="proj reveal"><span class="pass">PASS</span><h3>Sensitive-Data-Guard</h3><div class="chips"><span class="chip">FastAPI</span><span class="chip">ML</span><span class="chip">Chrome Extension</span></div><ul class="checks"><li>Evaluated the detection model over 15 test rounds to reach <strong>98.5% precision and recall</strong>.</li><li>Tested backend and extension across real web forms and AI chat tools.</li></ul><div class="plinks"><a class="plink" href="https://github.com/108krishna108/Sensitive-Data-Guard" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="plink" href="https://www.loom.com/share/98ffaa30d86a4ac590763d7433752512" target="_blank" rel="noopener noreferrer">Demo Video <span aria-hidden="true">↗</span></a></div></article><article class="proj reveal"><span class="pass">PASS</span><h3>NOC Auto-Responder</h3><div class="chips"><span class="chip">Python</span><span class="chip">IMAP</span><span class="chip">Gemini API</span></div><ul class="checks"><li>Production tool with tested fallback logic.</li><li><strong>80% faster</strong> alert handling and zero missed alerts.</li></ul><div class="plinks"><a class="plink" href="https://github.com/108krishna108/Noc__auto__responder108" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="plink" href="https://drive.google.com/file/d/1o7Acmb9kYt1wf3YQ3qT6laahlsnbMGVQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Demo Video <span aria-hidden="true">↗</span></a></div></article></div></section>
+  <section id="credentials"><p class="stage">Stage 04</p><h2>Certificates &amp; education</h2><div class="cards"><a class="cert reveal" href="https://drive.google.com/drive/folders/1lPvsDt-7lBXQo9Z0tTZPq7gN1NkgjozB?usp=drive_link" target="_blank" rel="noopener noreferrer"><span class="cert-year">2026</span><strong>Ethical Hacking &amp; Cybersecurity Training</strong><span class="cert-issuer">Cisco Networking Academy &amp; Fortinet</span><span class="cert-open">View certificate ↗</span></a><a class="cert reveal" href="https://drive.google.com/drive/folders/1X7R6Z8djDzRFwH_glODkxabgyO7KA3sj?usp=drive_link" target="_blank" rel="noopener noreferrer"><span class="cert-year">2022–2023</span><strong>Internship Certificates</strong><span class="cert-issuer">PG-Technology Pvt Ltd and Persistent Systems</span><span class="cert-open">View certificate ↗</span></a><a class="cert reveal" href="https://drive.google.com/drive/folders/17gWDw0-nOkX5b3Zy6BZHr-tLGWZZBBZR?usp=drive_link" target="_blank" rel="noopener noreferrer"><span class="cert-year">2024</span><strong>Python Programming and Web Development</strong><span class="cert-issuer">Udemy</span><span class="cert-open">View certificate ↗</span></a><div class="edu reveal"><span class="edu-years">2020 – 2023</span><strong>Bachelor of Technology in Computer Science</strong><span>CGC Landran, Punjab</span><span class="edu-score">7.8 CGPA</span></div><div class="edu reveal"><span class="edu-years">2017 – 2020</span><strong>Diploma in Electrical</strong><span>Centre for Bioinformatics, Jharkhand</span><span class="edu-score">72.94%</span></div></div></section>
+  <section id="contact"><p class="stage">Stage 05</p><h2>Contact</h2><ul class="contact-list reveal"><li><a href="tel:+918709717170"><span>Phone</span>+91 87097 17170</a></li><li><a href="tel:+918674930895"><span>Alternate Phone</span>+91 86749 30895</a></li><li><a href="mailto:ashutoshkumarak876@gmail.com"><span>Email</span>ashutoshkumarak876@gmail.com</a></li><li><a href="mailto:ashutoshkumar37408@gmail.com"><span>Alternate Email</span>ashutoshkumar37408@gmail.com</a></li><li><a href="https://github.com/108krishna108" target="_blank" rel="noopener noreferrer"><span>GitHub</span>github.com/108krishna108</a></li><li><a href="https://drive.google.com/file/d/1w16ZoLhBtQPsL9_IGlpdGsKBTIjuJkCu/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><span>Resume</span>View full resume (PDF) ↗</a></li></ul></section>
+</main>
+<footer>© 2026 Ashutosh Kumar</footer>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var heading = document.querySelector('h1');
+  if (heading){
+    heading.classList.add('glitch');
+    heading.setAttribute('data-text', heading.textContent);
+  }
+
+  // scroll-in directions, matching the Cyber Security portfolio
+  function mark(selector, direction){
+    document.querySelectorAll(selector).forEach(function(el){
+      el.classList.add('reveal');
+      el.classList.remove('right', 'up');
+      if (direction) el.classList.add(direction);
+    });
+  }
+  mark('.hero-grid>div:first-child,.masthead>div:first-child,.hero>div:first-child');
+  mark('.avatar,.terminal', 'right');
+  mark('h2,.job,.code,.editor .shell,.model,.panel,.contact-list', 'up');
+  document.querySelectorAll('.metric,.proj,.cert,.edu,.skill,.suite,.step').forEach(function(el){
+    var index = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.classList.add('reveal');
+    el.classList.remove('right', 'up');
+    if (index % 2) el.classList.add('right');
+  });
+
+  var reveals = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('is-visible'); });
+  } else {
+    var seen = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){ entry.target.classList.add('is-visible'); seen.unobserve(entry.target); }
+      });
+    }, { threshold:.08, rootMargin:'0px 0px -5% 0px' });
+    reveals.forEach(function(el){ seen.observe(el); });
+  }
+
+  // hover-tilt
+  if (!reduce && window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.avatar,.metric,.job,.proj,.cert,.edu,.skill,.suite,.step,.panel,.code,.editor .shell,.model,.terminal').forEach(function(el){
+      el.classList.add('tilt');
+      el.addEventListener('pointermove', function(e){
+        if (!el.classList.contains('is-visible')) return;
+        el.style.transition = 'none';
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        var strength = r.width > 640 ? 3 : 9;
+        el.style.transform = 'perspective(900px) rotateX(' + (-py * strength).toFixed(2) + 'deg) rotateY(' + (px * strength).toFixed(2) + 'deg)';
+      });
+      el.addEventListener('pointerleave', function(){
+        el.style.transition = 'transform .3s ease';
+        el.style.transform = '';
+      });
+    });
+  }
+
+  // typewriter
+  var intro = document.querySelector('.intro');
+  if (intro && !reduce){
+    var text = intro.textContent, at = 0;
+    var cursor = document.createElement('span');
+    cursor.className = 'type-cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+    intro.style.minHeight = intro.offsetHeight + 'px';
+    intro.setAttribute('aria-label', text);
+    (function type(){
+      intro.textContent = text.slice(0, at);
+      intro.appendChild(cursor);
+      if (at++ < text.length) setTimeout(type, 24);
+    })();
+  }
+
+  // ambient background canvas, used by each theme
+  window.startAmbient = function(draw, fps){
+    var canvas = document.getElementById('ambient');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d'), width, height, last = 0;
+    function size(){
+      var ratio = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * ratio;
+      canvas.height = height * ratio;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      if (reduce) draw(ctx, width, height, 0);
+    }
+    size();
+    window.addEventListener('resize', size);
+    if (reduce) return;
+    (function loop(time){
+      requestAnimationFrame(loop);
+      if (document.hidden || time - last < 1000 / fps) return;
+      last = time;
+      draw(ctx, width, height, time);
+    })(0);
+  };
+
+  var links = document.querySelectorAll('[data-spy]');
+  if (links.length && 'IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        links.forEach(function(link){
+          var on = link.getAttribute('href') === '#' + entry.target.id;
+          link.classList.toggle('active', on);
+          if (on){
+            link.setAttribute('aria-current', 'true');
+            document.dispatchEvent(new CustomEvent('section-change', { detail:link }));
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      });
+    }, { rootMargin:'-40% 0px -55% 0px' });
+    links.forEach(function(link){
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target) spy.observe(target);
+    });
+  }
+})();
+(function(){
+  var bar = document.getElementById('progress');
+  var ticking = false;
+  function update(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ')';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){ ticking = true; requestAnimationFrame(update); }
+  }, { passive:true });
+  update();
+
+  document.addEventListener('section-change', function(event){
+    var nav = event.detail.parentNode;
+    if (nav.scrollWidth > nav.clientWidth) nav.scrollLeft = event.detail.offsetLeft - nav.offsetLeft - 16;
+  });
+
+  // rising pass marks
+  var marks = [];
+  for (var i = 0; i < 30; i++){
+    marks.push({ x:Math.random(), y:Math.random(), speed:.0006 + Math.random() * .001, size:12 + Math.random() * 12, amber:i % 4 === 0 });
+  }
+  window.startAmbient(function(ctx, width, height){
+    ctx.clearRect(0, 0, width, height);
+    marks.forEach(function(mark){
+      mark.y -= mark.speed;
+      if (mark.y < -.05){ mark.y = 1.05; mark.x = Math.random(); }
+      ctx.font = mark.size + 'px "Fira Code", monospace';
+      ctx.fillStyle = mark.amber ? 'rgba(245,165,36,.2)' : 'rgba(94,234,212,.2)';
+      ctx.fillText('✓', mark.x * width, mark.y * height);
+    });
+  }, 30);
+})();
+</script>
+</body>
+</html>

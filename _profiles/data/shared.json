@@ -1,0 +1,69 @@
+{
+  "name": "Ashutosh Kumar",
+  "location": "Gurugram, Haryana, India",
+  "availability": "Available Immediately",
+  "phones": [
+    { "display": "+91 87097 17170", "tel": "+918709717170" },
+    { "display": "+91 86749 30895", "tel": "+918674930895" }
+  ],
+  "emails": ["ashutoshkumarak876@gmail.com", "ashutoshkumar37408@gmail.com"],
+  "github": { "label": "github.com/108krishna108", "url": "https://github.com/108krishna108" },
+  "linkedin": { "label": "linkedin.com/in/contactashutoshkumarakdev", "url": "https://www.linkedin.com/in/contactashutoshkumarakdev" },
+  "projects": {
+    "fruit": {
+      "name": "Fruit-Store-Pentest",
+      "links": [
+        { "label": "Live Demo", "url": "https://fruit-store-pentest.onrender.com/" },
+        { "label": "GitHub", "url": "https://github.com/108krishna108/fruit-store-pentest" }
+      ]
+    },
+    "sdg": {
+      "name": "Sensitive-Data-Guard",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/108krishna108/Sensitive-Data-Guard" },
+        { "label": "Demo Video", "url": "https://www.loom.com/share/98ffaa30d86a4ac590763d7433752512" }
+      ]
+    },
+    "noc": {
+      "name": "NOC Auto-Responder",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/108krishna108/Noc__auto__responder108" },
+        { "label": "Demo Video", "url": "https://drive.google.com/file/d/1o7Acmb9kYt1wf3YQ3qT6laahlsnbMGVQ/view?usp=drive_link" }
+      ]
+    }
+  },
+  "certificates": {
+    "security": {
+      "title": "Ethical Hacking & Cybersecurity Training",
+      "issuer": "Cisco Networking Academy & Fortinet",
+      "year": "2026",
+      "url": "https://drive.google.com/drive/folders/1lPvsDt-7lBXQo9Z0tTZPq7gN1NkgjozB?usp=drive_link"
+    },
+    "internships": {
+      "title": "Internship Certificates",
+      "issuer": "PG-Technology Pvt Ltd and Persistent Systems",
+      "year": "2022–2023",
+      "url": "https://drive.google.com/drive/folders/1X7R6Z8djDzRFwH_glODkxabgyO7KA3sj?usp=drive_link"
+    },
+    "python": {
+      "title": "Python Programming and Web Development",
+      "issuer": "Udemy",
+      "year": "2024",
+      "url": "https://drive.google.com/drive/folders/17gWDw0-nOkX5b3Zy6BZHr-tLGWZZBBZR?usp=drive_link"
+    }
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Computer Science",
+      "school": "CGC Landran, Punjab",
+      "score": "7.8 CGPA",
+      "years": "2020 – 2023"
+    },
+    {
+      "degree": "Diploma in Electrical",
+      "school": "Centre for Bioinformatics, Jharkhand",
+      "score": "72.94%",
+      "years": "2017 – 2020"
+    }
+  ]
+}

@@ -134,6 +134,8 @@
   .back-cta a:hover{border-color:var(--blue);color:var(--blue);}
 
   footer{text-align:center;padding-block:2rem;font-size:.82rem;color:var(--ink-faint);}
+  /* nav-phone-fix */
+  @media (max-width:760px){.nav-inner{flex-wrap:wrap;}.nav-links{order:3;width:100%;overflow-x:auto;scrollbar-width:none;}.nav-links a{flex:none;}}
 </style>
 </head>
 <body>
@@ -188,7 +190,7 @@
       <a href="projects.html">Projects</a>
       <a href="certifications.html">Certifications</a>
     </div>
-    <a class="nav-cta" href="contact.html">Contact</a>
+    <div style="display:flex;gap:.6rem;flex:none;"><a class="nav-cta" href="https://drive.google.com/file/d/1drTIZ5bHmuhX8sQoKKMVmMJmAPo-tbUe/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Resume</a><a class="nav-cta" href="contact.html">Contact</a></div>
   </div>
 </nav>
 
@@ -196,51 +198,36 @@
   <section class="page-hero">
     <div class="kicker">What I work with</div>
     <h1>Core <span>Skills</span></h1>
-    <p class="lede">From SOC monitoring and incident triage to application-security testing and Python-based automation — the tools and techniques I use day to day.</p>
+    <p class="lede">From detection and threat hunting to phishing, identity and endpoint response — the tools and frameworks behind my SOC work.</p>
   </section>
 
   <section>
     <div class="skill-group reveal">
-      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg>SIEM &amp; Log Analysis</h4>
+      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg>Detection &amp; SIEM</h4>
       <div class="badge-row">
-        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">Google SecOps (Chronicle UDM Search)</span></span>
+        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">Google SecOps (Chronicle UDM)</span></span>
         <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">CrowdStrike Next-Gen SIEM</span></span>
         <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">IBM QRadar</span></span>
-        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">Threat Hunting Queries</span></span>
+        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M6 9l2.5 2.5L11 8l2 3 2.5-3"/></svg><span class="badge-label">Threat Hunting</span></span>
       </div>
     </div>
 
     <div class="skill-group reveal">
-      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg>EDR &amp; Identity</h4>
+      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg>Endpoint &amp; Identity</h4>
       <div class="badge-row">
-        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg><span class="badge-label">CrowdStrike Falcon (RTR, Sandbox, On-Demand Scan)</span></span>
-        <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg><span class="badge-label">CrowdStrike Identity Protection</span></span>
-        <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg><span class="badge-label">Entra ID (Azure AD)</span></span>
-        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg><span class="badge-label">Active Directory</span></span>
-        <span class="badge" style="--dur:7s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg><span class="badge-label">MFA</span></span>
+        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg><span class="badge-label">CrowdStrike Falcon (RTR, Sandbox, Identity Protection)</span></span>
+        <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg><span class="badge-label">Entra ID</span></span>
+        <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg><span class="badge-label">Active Directory</span></span>
+        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l2 2 3-3"/></svg><span class="badge-label">MFA</span></span>
       </div>
     </div>
 
     <div class="skill-group reveal">
       <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email Security</h4>
       <div class="badge-row">
-        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="badge-label">Proofpoint (TAP, Protection Server, TRAP, Browser Isolation)</span></span>
+        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="badge-label">Proofpoint (TAP, TRAP, Browser Isolation)</span></span>
         <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="badge-label">Abnormal Security</span></span>
         <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="badge-label">Microsoft Defender</span></span>
-        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="badge-label">Phishing Analysis</span></span>
-      </div>
-    </div>
-
-    <div class="skill-group reveal">
-      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Incident Response</h4>
-      <div class="badge-row">
-        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">Alert Triage</span></span>
-        <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">IOC Analysis</span></span>
-        <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">Containment &amp; Remediation</span></span>
-        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">Malware Sandboxing</span></span>
-        <span class="badge" style="--dur:7s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">Root Cause Analysis (RCA)</span></span>
-        <span class="badge" style="--dur:6.8s;--delay:.4s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">Escalation</span></span>
-        <span class="badge" style="--dur:7.2s;--delay:.1s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="badge-label">SLA-Driven Ticketing</span></span>
       </div>
     </div>
 
@@ -249,11 +236,9 @@
       <div class="badge-row">
         <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span class="badge-label">ReliaQuest GreyMatter</span></span>
         <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span class="badge-label">ServiceNow</span></span>
-        <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span class="badge-label">Palo Alto Firewall (EDL)</span></span>
+        <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span class="badge-label">Palo Alto EDL</span></span>
         <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span class="badge-label">VirusTotal</span></span>
         <span class="badge" style="--dur:7s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span class="badge-label">AbuseIPDB</span></span>
-        <span class="badge" style="--dur:6.8s;--delay:.4s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span class="badge-label">IPinfo</span></span>
-        <span class="badge" style="--dur:7.2s;--delay:.1s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg><span class="badge-label">IP2Proxy</span></span>
       </div>
     </div>
 
@@ -262,39 +247,20 @@
       <div class="badge-row">
         <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">MITRE ATT&amp;CK</span></span>
         <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">Cyber Kill Chain</span></span>
-        <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">OWASP Top 10</span></span>
-        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">CWE</span></span>
-        <span class="badge" style="--dur:7s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">NIST Incident Response Lifecycle</span></span>
+        <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">NIST IR Lifecycle</span></span>
+        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">OWASP Top 10</span></span>
+        <span class="badge" style="--dur:7s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="badge-label">CWE</span></span>
       </div>
     </div>
 
     <div class="skill-group reveal">
-      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg>AppSec / VAPT</h4>
-      <div class="badge-row">
-        <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">SQL Injection</span></span>
-        <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">XSS</span></span>
-        <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">CSRF</span></span>
-        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">IDOR</span></span>
-        <span class="badge" style="--dur:7s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">SSRF</span></span>
-        <span class="badge" style="--dur:6.8s;--delay:.4s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">Broken Access Control</span></span>
-        <span class="badge" style="--dur:7.2s;--delay:.1s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">Insecure File Upload</span></span>
-        <span class="badge" style="--dur:6.2s;--delay:.35s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M9 6h6M7 9a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0z"/><path d="M4 11h3M17 11h3M4 16h3M17 16h3M9 21l-1-3M15 21l1-3"/></svg><span class="badge-label">Secure Code Review</span></span>
-      </div>
-    </div>
-
-    <div class="skill-group reveal">
-      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>Scripting &amp; Automation</h4>
+      <h4><svg class="group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>Automation</h4>
       <div class="badge-row">
         <span class="badge" style="--dur:6.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">Python</span></span>
         <span class="badge" style="--dur:7.5s;--delay:.3s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">PowerShell</span></span>
         <span class="badge" style="--dur:6s;--delay:.6s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">SQL</span></span>
-        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">JavaScript</span></span>
-        <span class="badge" style="--dur:7s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">Java</span></span>
-        <span class="badge" style="--dur:6.8s;--delay:.4s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">C++</span></span>
-        <span class="badge" style="--dur:7.2s;--delay:.1s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">Flask</span></span>
-        <span class="badge" style="--dur:6.2s;--delay:.35s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">FastAPI</span></span>
-        <span class="badge" style="--dur:7.8s;--delay:.25s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">scikit-learn</span></span>
-        <span class="badge" style="--dur:6.6s;--delay:.45s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">Git</span></span>
+        <span class="badge" style="--dur:8s;--delay:.2s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">FastAPI</span></span>
+        <span class="badge" style="--dur:7s;--delay:.5s"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="badge-label">LLM APIs</span></span>
       </div>
     </div>
   </section>

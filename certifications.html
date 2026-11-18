@@ -129,6 +129,8 @@
   .back-cta a:hover{border-color:var(--gold);color:var(--gold);}
 
   footer{text-align:center;padding-block:2rem;font-size:.82rem;color:var(--ink-faint);}
+  /* nav-phone-fix */
+  @media (max-width:760px){.nav-inner{flex-wrap:wrap;}.nav-links{order:3;width:100%;overflow-x:auto;scrollbar-width:none;}.nav-links a{flex:none;}}
 </style>
 </head>
 <body>
@@ -184,7 +186,7 @@
       <a href="projects.html">Projects</a>
       <a href="certifications.html">Certifications</a>
     </div>
-    <a class="nav-cta" href="contact.html">Contact</a>
+    <div style="display:flex;gap:.6rem;flex:none;"><a class="nav-cta" href="https://drive.google.com/file/d/1drTIZ5bHmuhX8sQoKKMVmMJmAPo-tbUe/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Resume</a><a class="nav-cta" href="contact.html">Contact</a></div>
   </div>
 </nav>
 
@@ -239,6 +241,22 @@
         <div class="cert-issuer">PG-Technology Pvt Ltd</div>
         <div class="cert-open">View certificate ↗</div>
       </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker" style="text-align:center;">Education</div>
+    <div class="cert-grid">
+      <div class="cert reveal">
+        <div class="cert-year">2020 – 2023 · 7.8 CGPA</div>
+        <h4>Bachelor of Technology in Computer Science</h4>
+        <div class="cert-issuer">CGC Landran, Punjab</div>
+      </div>
+      <div class="cert reveal">
+        <div class="cert-year">2017 – 2020 · 72.94%</div>
+        <h4>Diploma in Electrical</h4>
+        <div class="cert-issuer">Centre for Bioinformatics, Jharkhand</div>
+      </div>
     </div>
   </section>
 

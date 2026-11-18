@@ -1,0 +1,90 @@
+{
+  "slug": "ai-ml-engineer",
+  "title": "Software Developer – AI/ML",
+  "tagline": ["LLM Agents", "Python", "FastAPI", "scikit-learn", "Automation"],
+  "intro": "I build LLM agents and machine-learning tools in Python, from a labelled dataset to automation running in daily production.",
+  "resume_url": "https://drive.google.com/file/d/1RLlVlY41QVcTqa9_hmAewLSdM6iTiIDr/view?usp=drive_link",
+  "show_linkedin": true,
+  "metrics": [
+    { "value": "98.5%", "label": "precision and recall" },
+    { "value": "15", "label": "model tuning rounds" },
+    { "value": "80%", "label": "faster alert handling" },
+    { "value": "0", "label": "missed alerts" }
+  ],
+  "skills": [
+    { "name": "Machine Learning", "items": ["scikit-learn", "TF-IDF", "Logistic Regression", "feature engineering", "precision/recall evaluation", "model tuning"] },
+    { "name": "LLMs & Agents", "items": ["Gemini API", "prompt engineering", "tool-calling agentic workflows", "structured outputs", "fallback design"] },
+    { "name": "Backend & APIs", "items": ["Python", "FastAPI", "Flask", "REST APIs", "IMAP integrations"] },
+    { "name": "Data", "items": ["pandas", "SQL", "MongoDB", "dataset labelling and cleaning"] },
+    { "name": "Tools", "items": ["Git", "PowerShell", "Chrome Extensions", "ServiceNow"] }
+  ],
+  "experience": [
+    {
+      "role": "Software Developer – AI/ML & Automation",
+      "company": "Tietoevry India Pvt Ltd",
+      "location": "Gurugram",
+      "dates": "Aug 2024 – Oct 2026",
+      "groups": [
+        {
+          "title": "",
+          "bullets": [
+            "Designed and built an agentic NOC Auto-Responder: the agent reads device-down alerts over IMAP, calls **3 tools** (site directory, manager lookup, live weather API) and drafts notifications with Gemini.",
+            "Added a rule-based template fallback so the agent never drops an alert when the LLM fails or times out.",
+            "Applied detection logic and threat-intel APIs (VirusTotal, AbuseIPDB) to classify and prioritise **30–40 events a day (~700 a month)**.",
+            "Automated repetitive operations across **4 enterprise platforms** (ServiceNow, CrowdStrike, Google SecOps, Entra ID) with Python and PowerShell.",
+            "Analysed log data with Google SecOps queries to find patterns behind recurring incidents and traced them to **3 root causes**."
+          ]
+        }
+      ],
+      "achievements": [
+        "Cut alert handling from **~15 to ~3 minutes (80% faster)** with the LLM-powered auto-responder.",
+        "Replaced **~30 minutes of manual work with a ~3-minute automated run (90% faster)** for bulk account operations."
+      ]
+    },
+    {
+      "role": "Software Development Intern",
+      "company": "PG-Technology Pvt Ltd",
+      "location": "Punjab",
+      "dates": "Feb 2023 – May 2023",
+      "groups": [{ "title": "", "bullets": ["Built web app features with Node.js, React and MongoDB."] }],
+      "achievements": []
+    },
+    {
+      "role": "Freelance Usability Tester",
+      "company": "UserTesting.com",
+      "location": "",
+      "dates": "Feb 2022 – Aug 2024",
+      "groups": [
+        {
+          "title": "",
+          "bullets": [
+            "Completed paid usability and feedback tests evaluating websites and applications, providing structured, detailed feedback under platform confidentiality terms.",
+            "Completed **25+ tests**, maintaining a consistent quality and completion record."
+          ]
+        }
+      ],
+      "achievements": []
+    }
+  ],
+  "projects": [
+    {
+      "key": "sdg",
+      "tags": ["ML", "FastAPI", "Chrome Extension"],
+      "bullets": [
+        "Built and labelled a text dataset, trained a TF-IDF + Logistic Regression classifier and tuned it over 15 rounds to **98.5% precision and recall**.",
+        "Served via FastAPI to a Chrome extension that blocks sensitive data from AI chat tools."
+      ]
+    },
+    {
+      "key": "noc",
+      "tags": ["LLM Agent", "Gemini API", "IMAP"],
+      "bullets": ["Tool-using agent in daily production use.", "**80% faster** alert handling with zero missed alerts."]
+    },
+    {
+      "key": "fruit",
+      "tags": ["Flask", "Python"],
+      "bullets": ["Built and security-tested a web app.", "13 vulnerabilities found and fixed."]
+    }
+  ],
+  "certificates": ["python", "internships", "security"]
+}

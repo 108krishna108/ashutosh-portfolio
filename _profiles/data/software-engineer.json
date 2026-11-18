@@ -1,0 +1,99 @@
+{
+  "slug": "software-engineer",
+  "title": "Software Developer",
+  "tagline": ["Python", "Node.js", "React", "FastAPI", "Automation"],
+  "intro": "I build internal tools and automation in Python and PowerShell, and ship web features across the MERN stack.",
+  "resume_url": "https://drive.google.com/file/d/1kUhJYbKso49cQe3f9lA68agg-1YZJ_XZ/view?usp=drive_link",
+  "show_linkedin": false,
+  "metrics": [
+    { "value": "80%", "label": "faster alert handling" },
+    { "value": "90%", "label": "faster bulk account operations" },
+    { "value": "4", "label": "enterprise platforms integrated" },
+    { "value": "~700", "label": "tickets a month supported" }
+  ],
+  "skills": [
+    { "name": "Backend", "items": ["Python", "FastAPI", "Flask", "Node.js", "Express", "REST APIs", "IMAP integrations"] },
+    { "name": "Frontend", "items": ["React", "JavaScript", "HTML", "CSS", "Chrome Extensions (Manifest V3)"] },
+    { "name": "Databases", "items": ["MongoDB", "SQL"] },
+    { "name": "Automation & Scripting", "items": ["PowerShell", "Python scripting", "LLM APIs (Gemini)"] },
+    { "name": "Tools", "items": ["Git", "GitHub", "ServiceNow", "Postman"] },
+    { "name": "Secure Development", "items": ["OWASP Top 10", "secure code review", "CWE"] }
+  ],
+  "experience": [
+    {
+      "role": "Software Developer – Automation & Internal Tools",
+      "company": "Tietoevry India Pvt Ltd",
+      "location": "Gurugram",
+      "dates": "Aug 2024 – Oct 2026",
+      "groups": [
+        {
+          "title": "",
+          "bullets": [
+            "Built and maintained internal automation tools in Python and PowerShell for a 24x7 operations team handling **30–40 tickets a day (~700 a month)**.",
+            "Developed a Python service that reads alerts over IMAP, enriches them from **3 data sources** (site directory, manager lookup, live weather API) and drafts notifications through the Gemini API.",
+            "Integrated scripts with **4 enterprise platforms** (ServiceNow, CrowdStrike, Google SecOps, Entra ID) to pull data and push actions without manual steps.",
+            "Wrote bulk-operation scripts in PowerShell for account management, with logging and error handling for every run.",
+            "Performed secure code review and supported VAPT on live web applications, applying OWASP Top 10 fixes."
+          ]
+        }
+      ],
+      "achievements": [
+        "Cut alert handling from **~15 to ~3 minutes (80% faster)** with the Python + Gemini auto-responder, with a template fallback so no alert is missed.",
+        "Replaced **~30 minutes of manual work with a ~3-minute script run (90% faster)** for bulk account operations."
+      ]
+    },
+    {
+      "role": "Software Development Intern",
+      "company": "PG-Technology Pvt Ltd",
+      "location": "Punjab",
+      "dates": "Feb 2023 – May 2023",
+      "groups": [{ "title": "", "bullets": ["Built and shipped web app features across the full MERN stack (MongoDB, Express, React, Node.js)."] }],
+      "achievements": []
+    },
+    {
+      "role": "Software Development Intern",
+      "company": "Persistent Systems",
+      "location": "Mohali",
+      "dates": "Mar 2022 – Jun 2022",
+      "groups": [{ "title": "", "bullets": ["Built backend modules with Node.js and MongoDB using OOP principles."] }],
+      "achievements": []
+    },
+    {
+      "role": "Freelance Usability Tester",
+      "company": "UserTesting.com",
+      "location": "",
+      "dates": "Feb 2022 – Aug 2024",
+      "groups": [
+        {
+          "title": "",
+          "bullets": [
+            "Completed paid usability and feedback tests evaluating websites and applications, providing structured, detailed feedback under platform confidentiality terms.",
+            "Completed **25+ tests**, maintaining a consistent quality and completion record."
+          ]
+        }
+      ],
+      "achievements": []
+    }
+  ],
+  "projects": [
+    {
+      "key": "sdg",
+      "tags": ["Chrome Extension", "FastAPI", "ML"],
+      "bullets": [
+        "Full-stack DLP tool: Chrome extension frontend and FastAPI backend that warn users before pasting sensitive data into web forms and AI chats.",
+        "**98.5% precision and recall** after 15 tuning rounds; 2 external API integrations."
+      ]
+    },
+    {
+      "key": "fruit",
+      "tags": ["Flask", "Python"],
+      "bullets": ["Built a complete e-commerce app, then hardened it: fixed **13 vulnerabilities across 10+ OWASP categories** on a separate branch."]
+    },
+    {
+      "key": "noc",
+      "tags": ["Python", "IMAP", "Gemini API"],
+      "bullets": ["Production tool used daily by the operations team.", "**80% faster** alert handling."]
+    }
+  ],
+  "certificates": ["python", "internships", "security"]
+}

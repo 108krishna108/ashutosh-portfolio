@@ -1,4 +1,9 @@
-<title>Ashutosh Kumar</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashutosh Kumar — SOC Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap">
@@ -132,6 +137,8 @@
   .tl-entry .co{color:var(--ink-faint);font-weight:500;font-size:.9rem;}
   .tl-entry ul{margin:.8rem 0 0;padding-left:1.1rem;color:var(--ink-dim);font-weight:300;font-size:.96rem;display:flex;flex-direction:column;gap:.5rem;}
   .tl-entry li::marker{color:var(--green);}
+  .tl-sub{margin-top:1.1rem;font-family:var(--font-mono);font-size:.78rem;color:var(--cyan);}
+  .tl-entry .tl-sub + ul{margin-top:.5rem;}
 
   /* projects */
   .proj-card{border:1px solid var(--line-strong);border-radius:6px;background:var(--bg-elev);margin-bottom:1.8rem;overflow:hidden;}
@@ -165,11 +172,14 @@
   .contact{text-align:center;}
   .contact p{margin:.5rem 0;font-family:var(--font-mono);color:var(--ink-dim);font-size:.95rem;}
   .contact a:hover{color:var(--green);}
+  .contact p{overflow-wrap:anywhere;}
 
   footer{text-align:center;padding-block:2rem;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-faint);position:relative;z-index:1;}
 
   .tilt{transform-style:preserve-3d;}
 </style>
+</head>
+<body>
 
 <canvas id="matrix-canvas"></canvas>
 <div class="page-glow"></div>
@@ -184,19 +194,19 @@
       <a href="projects.html">projects</a>
       <a href="certifications.html">certs</a>
     </div>
-    <a class="nav-cta" href="contact.html">contact_</a>
+    <div style="display:flex;gap:.6rem;flex:none;"><a class="nav-cta" href="https://drive.google.com/file/d/1drTIZ5bHmuhX8sQoKKMVmMJmAPo-tbUe/view?usp=drive_link" target="_blank" rel="noopener noreferrer">resume_</a><a class="nav-cta" href="contact.html">contact_</a></div>
   </div>
 </nav>
 
 <header class="hero" id="home">
   <div class="hero-container">
     <div class="hero-content reveal">
-      <div class="sys-status">[ SYSTEM ONLINE · SERVING NOTICE PERIOD ]</div>
+      <div class="sys-status">[ SYSTEM ONLINE · AVAILABLE IMMEDIATELY ]</div>
       <h1 class="glitch" data-text="ASHUTOSH_KUMAR">ASHUTOSH_KUMAR</h1>
-      <div class="role-line">SOC Analyst — Incident Response · Threat Detection · Application Security</div>
+      <div class="role-line">SOC Analyst — Incident Response · Threat Hunting · Phishing &amp; Identity Defense · Security Automation</div>
       <p id="typewriter"><span class="cursor">&nbsp;</span></p>
       <div class="btn-group">
-        <a class="btn-neon" href="https://drive.google.com/file/d/1Za6PsxLIgipJvUEQW1sZ97-1b2eq9-cM/view?usp=sharing" target="_blank" rel="noopener noreferrer">VIEW_RESUME</a>
+        <a class="btn-neon" href="https://drive.google.com/file/d/1drTIZ5bHmuhX8sQoKKMVmMJmAPo-tbUe/view?usp=drive_link" target="_blank" rel="noopener noreferrer">VIEW_RESUME</a>
         <a class="btn-ghost" href="#contact">CONTACT_ME</a>
       </div>
     </div>
@@ -219,10 +229,10 @@
           <img src="photo.png" alt="Ashutosh Kumar">
         </div>
         <div class="about-text reveal right">
-          <p>I work in a 24x7 SOC at Tietoevry, triaging and investigating phishing, BEC, identity-compromise and EDR alerts across Google SecOps, CrowdStrike Falcon, Proofpoint, Entra ID and ReliaQuest GreyMatter — from first alert through containment, IOC blocking and root cause. Alongside that I've assisted senior testers on penetration tests of live web applications, backed by application-security research built for Tech Utsav, Tietoevry's biannual innovation challenge, covering the OWASP Top 10, an ML-based sensitive-data-detection engine, and a Python security-automation tool. I'm comfortable working across detection, investigation, and remediation, with a builder's habit of documenting root cause and fix for every finding.</p>
+          <p>I spent 2 years in a 24x7 SOC at Tietoevry, triaging 30–40 alerts a day across phishing, BEC, identity and EDR detections with Google SecOps, CrowdStrike Falcon, Proofpoint, Entra ID and ReliaQuest GreyMatter — from first alert through containment, IOC blocking and root cause. I also supported senior testers on VAPT of live web applications, backed by application-security research built for Tech Utsav, Tietoevry's biannual innovation challenge, covering the OWASP Top 10, an ML-based sensitive-data-detection engine, and a Python security-automation tool. I'm comfortable working across detection, investigation, and remediation, with a builder's habit of documenting root cause and fix for every finding.</p>
           <p style="margin-top:1rem;">With a B.Tech in Computer Science from CGC Landran and a diploma in Electrical from the Centre for Bioinformatics, I've completed hands-on training through Udemy and PG-Technology, and put that training to work through Tech Utsav — most recently chaining 13 vulnerabilities across a self-built e-commerce app and shipping a Chrome extension that catches sensitive-data leaks with up to 98.5% precision and recall.</p>
           <div class="stat-grid">
-            <div class="stat"><div class="stat-num">2+</div><div class="stat-label">yrs_soc_ops</div></div>
+            <div class="stat"><div class="stat-num">2</div><div class="stat-label">yrs_soc_ops</div></div>
             <div class="stat"><div class="stat-num">13</div><div class="stat-label">vulns_fixed</div></div>
             <div class="stat"><div class="stat-num">98.5%</div><div class="stat-label">ml_precision</div></div>
             <div class="stat"><div class="stat-num">7</div><div class="stat-label">certs</div></div>
@@ -237,51 +247,39 @@
       <div class="kicker">02 · what_i_work_with</div>
       <h2 class="sec-title">CORE <span>SKILLS</span></h2>
       <div class="skill-group">
-        <h4>siem_and_log_analysis</h4>
+        <h4>detection_and_siem</h4>
         <div class="badge-row">
-          <span class="badge">Google SecOps (Chronicle UDM Search)</span><span class="badge">CrowdStrike Next-Gen SIEM</span><span class="badge">IBM QRadar</span><span class="badge">Threat Hunting Queries</span>
+          <span class="badge">Google SecOps (Chronicle UDM)</span><span class="badge">CrowdStrike Next-Gen SIEM</span><span class="badge">IBM QRadar</span><span class="badge">Threat Hunting</span>
         </div>
       </div>
       <div class="skill-group">
-        <h4>edr_and_identity</h4>
+        <h4>endpoint_and_identity</h4>
         <div class="badge-row">
-          <span class="badge">CrowdStrike Falcon (RTR, Sandbox, On-Demand Scan)</span><span class="badge">CrowdStrike Identity Protection</span><span class="badge">Entra ID (Azure AD)</span><span class="badge">Active Directory</span><span class="badge">MFA</span>
+          <span class="badge">CrowdStrike Falcon (RTR, Sandbox, Identity Protection)</span><span class="badge">Entra ID</span><span class="badge">Active Directory</span><span class="badge">MFA</span>
         </div>
       </div>
       <div class="skill-group">
         <h4>email_security</h4>
         <div class="badge-row">
-          <span class="badge">Proofpoint (TAP, Protection Server, TRAP, Browser Isolation)</span><span class="badge">Abnormal Security</span><span class="badge">Microsoft Defender</span><span class="badge">Phishing Analysis</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>incident_response</h4>
-        <div class="badge-row">
-          <span class="badge">Alert Triage</span><span class="badge">IOC Analysis</span><span class="badge">Containment &amp; Remediation</span><span class="badge">Malware Sandboxing</span><span class="badge">Root Cause Analysis (RCA)</span><span class="badge">Escalation</span><span class="badge">SLA-Driven Ticketing</span>
+          <span class="badge">Proofpoint (TAP, TRAP, Browser Isolation)</span><span class="badge">Abnormal Security</span><span class="badge">Microsoft Defender</span>
         </div>
       </div>
       <div class="skill-group">
         <h4>response_and_intel</h4>
         <div class="badge-row">
-          <span class="badge">ReliaQuest GreyMatter</span><span class="badge">ServiceNow</span><span class="badge">Palo Alto Firewall (EDL)</span><span class="badge">VirusTotal</span><span class="badge">AbuseIPDB</span><span class="badge">IPinfo</span><span class="badge">IP2Proxy</span>
+          <span class="badge">ReliaQuest GreyMatter</span><span class="badge">ServiceNow</span><span class="badge">Palo Alto EDL</span><span class="badge">VirusTotal</span><span class="badge">AbuseIPDB</span>
         </div>
       </div>
       <div class="skill-group">
         <h4>frameworks</h4>
         <div class="badge-row">
-          <span class="badge">MITRE ATT&amp;CK</span><span class="badge">Cyber Kill Chain</span><span class="badge">OWASP Top 10</span><span class="badge">CWE</span><span class="badge">NIST Incident Response Lifecycle</span>
+          <span class="badge">MITRE ATT&amp;CK</span><span class="badge">Cyber Kill Chain</span><span class="badge">NIST IR Lifecycle</span><span class="badge">OWASP Top 10</span><span class="badge">CWE</span>
         </div>
       </div>
       <div class="skill-group">
-        <h4>appsec_and_vapt</h4>
+        <h4>automation</h4>
         <div class="badge-row">
-          <span class="badge">SQL Injection</span><span class="badge">XSS</span><span class="badge">CSRF</span><span class="badge">IDOR</span><span class="badge">SSRF</span><span class="badge">Broken Access Control</span><span class="badge">Insecure File Upload</span><span class="badge">Secure Code Review</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>scripting_and_automation</h4>
-        <div class="badge-row">
-          <span class="badge">Python</span><span class="badge">PowerShell</span><span class="badge">SQL</span><span class="badge">JavaScript</span><span class="badge">Java</span><span class="badge">C++</span><span class="badge">Flask</span><span class="badge">FastAPI</span><span class="badge">scikit-learn</span><span class="badge">Git</span>
+          <span class="badge">Python</span><span class="badge">PowerShell</span><span class="badge">SQL</span><span class="badge">FastAPI</span><span class="badge">LLM APIs</span>
         </div>
       </div>
     </div>
@@ -293,25 +291,26 @@
       <h2 class="sec-title">EXPERIENCE<span>_</span></h2>
 
       <div class="tl-entry tilt reveal up">
-        <div class="tl-when">Sep 2024 – Present · India · Serving Notice Period</div>
+        <div class="tl-when">Aug 2024 – Oct 2026 · Gurugram</div>
         <h3>Security Analyst (SOC) <span class="co">— Tietoevry India Pvt Ltd</span></h3>
+        <p class="tl-sub">Incident Response &amp; Investigations</p>
         <ul>
-          <li>Monitor and triage security alerts in a 24x7 SOC from ReliaQuest GreyMatter and ServiceNow across phishing, identity, MFA-fatigue and endpoint detections; escalate and resolve within SLA.</li>
-          <li>Run phishing and BEC investigations end to end: trace senders and recipients in Proofpoint, pull malicious mail with Abnormal Security, detonate attachments in CrowdStrike Sandbox and check in Next-Gen SIEM who clicked or opened them.</li>
-          <li>Investigate account compromise through Entra ID sign-in logs, new devices, MFA methods and inbox forwarding rules; contain confirmed cases by resetting passwords, revoking sessions and removing attacker devices.</li>
-          <li>Write Google SecOps (UDM) hunting queries to trace brute force and password spraying to the source IP, list affected users and unlock them in bulk with PowerShell; find root cause of repeated lockouts (cached credentials, Citrix profiles, Cisco ISE Wi-Fi).</li>
-          <li>Investigate EDR alerts such as Office apps spawning executables: pull process trees and hashes from CrowdStrike, find the infection vector (email or browser), then remediate over RTR and run a full scan.</li>
-          <li>Block malicious IOCs (IPs, domains, senders, file hashes) in Palo Alto EDL, Proofpoint and GreyMatter, each backed by a change request and evidence in the ticket.</li>
-          <li>Assisted senior testers on penetration tests (VAPT) of live web applications.</li>
+          <li>Monitored a 24x7 SOC for 2 years, triaging <strong>30–40 alerts a day (~700 a month)</strong> from ReliaQuest GreyMatter and ServiceNow across phishing, identity, MFA-fatigue and endpoint detections; escalated true positives and closed within SLA.</li>
+          <li>Ran phishing and BEC investigations end to end across 4 tools: traced senders and recipients in Proofpoint, purged malicious mail with Abnormal Security, detonated attachments in CrowdStrike Sandbox and confirmed who clicked or opened them in Next-Gen SIEM.</li>
+          <li>Investigated account compromise through 4 signals (Entra ID sign-ins, new devices, MFA methods, inbox forwarding rules); contained confirmed cases in 3 steps: password reset, session revocation and removal of attacker devices.</li>
+          <li>Investigated EDR alerts such as Office apps spawning executables: pulled process trees and hashes from CrowdStrike, traced the infection vector (email or browser), then remediated over RTR and ran a full scan.</li>
         </ul>
-      </div>
-      <div class="tl-entry tilt reveal up">
-        <div class="tl-when">Aug 2024 – Sep 2024 · India</div>
-        <h3>NOC Engineer <span class="co">— Tietoevry India Pvt Ltd</span></h3>
+        <p class="tl-sub">Threat Hunting &amp; Root Cause</p>
         <ul>
-          <li>Completed initial onboarding as a NOC Engineer, monitoring network and device health alerts and following standard operating procedures to identify and escalate outages.</li>
-          <li>Logged and tracked incidents through ticketing tools, coordinating with site and infrastructure teams to ensure timely acknowledgement and resolution.</li>
-          <li>Built foundational alert-triage and escalation discipline that carried directly into the Security Analyst role that followed.</li>
+          <li>Wrote Google SecOps UDM hunting queries to trace brute-force and password-spraying attacks to the source IP and list every affected user.</li>
+          <li>Root-caused repeated account lockouts to 3 sources (cached credentials, Citrix profiles, Cisco ISE Wi-Fi), stopping recurring tickets.</li>
+          <li>Blocked 4 types of IOCs (IPs, domains, senders, file hashes) across 3 platforms (Palo Alto EDL, Proofpoint, GreyMatter), each backed by a change request and ticket evidence.</li>
+          <li>Started as NOC Engineer (Aug–Sep 2024); supported senior testers on VAPT of live web applications.</li>
+        </ul>
+        <p class="tl-sub">Key achievements</p>
+        <ul>
+          <li>Built a NOC Auto-Responder (Python, IMAP, Gemini) that cut alert handling from <strong>~15 to ~3 minutes (80% faster)</strong>, with a template fallback so no alert is missed.</li>
+          <li>Automated bulk account unlocks in PowerShell, turning <strong>~30 minutes of manual work into a ~3-minute run (90% faster)</strong>.</li>
         </ul>
       </div>
       <div class="tl-entry tilt reveal up">
@@ -379,6 +378,7 @@
           <ul>
             <li>Built a Python automation tool that monitors a NOC mailbox over IMAP, parses device-down alerts, resolves the affected site's manager contacts and location, and enriches each incident with live weather data.</li>
             <li>Integrated Google Gemini to draft professional incident notifications, with a guaranteed deterministic template fallback so a notification is never lost to an AI failure.</li>
+            <li>Production automation that cut alert handling from ~15 to ~3 minutes (80% faster).</li>
           </ul>
           <div class="link-row">
             <a class="badge-ghost" href="https://github.com/108krishna108/Noc__auto__responder108" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
@@ -419,9 +419,24 @@
     </div>
   </section>
 
+  <section id="education">
+    <div class="wrap">
+      <div class="kicker">06 · education</div>
+      <h2 class="sec-title">EDUCATION<span>_</span></h2>
+      <div class="cert-grid">
+        <div class="cert">
+          <div class="cert-year">2020 – 2023 · 7.8 CGPA</div><h4>Bachelor of Technology in Computer Science</h4><div class="cert-issuer">CGC Landran, Punjab</div>
+        </div>
+        <div class="cert">
+          <div class="cert-year">2017 – 2020 · 72.94%</div><h4>Diploma in Electrical</h4><div class="cert-issuer">Centre for Bioinformatics, Jharkhand</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
-      <div class="kicker" style="text-align:center;">06 · get_in_touch</div>
+      <div class="kicker" style="text-align:center;">07 · get_in_touch</div>
       <h2 class="sec-title">LET'S <span>TALK</span></h2>
       <div class="contact">
         <p>Gurugram, Haryana, India</p>
@@ -431,7 +446,7 @@
         <p><a href="mailto:ashutoshkumar37408@gmail.com">ashutoshkumar37408@gmail.com</a></p>
         <p><a href="https://github.com/108krishna108" target="_blank" rel="noopener noreferrer">github.com/108krishna108</a></p>
         <p><a href="https://www.linkedin.com/in/contactashutoshkumarakdev" target="_blank" rel="noopener noreferrer">linkedin.com/in/contactashutoshkumarakdev</a></p>
-        <p><a href="https://drive.google.com/file/d/1Za6PsxLIgipJvUEQW1sZ97-1b2eq9-cM/view?usp=sharing" target="_blank" rel="noopener noreferrer">View full résumé (PDF) ↗</a></p>
+        <p><a href="https://drive.google.com/file/d/1drTIZ5bHmuhX8sQoKKMVmMJmAPo-tbUe/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View full résumé (PDF) ↗</a></p>
       </div>
     </div>
   </section>
@@ -472,9 +487,9 @@
 
   // typewriter
   var lines = [
-    '> 2+ years in a 24x7 SOC: phishing, BEC, identity & EDR',
-    '> OWASP Top 10 exploitation research (Tech Utsav)',
-    '> ML-based sensitive-data-detection engine — 98.5% precision'
+    '> 2 years in a 24x7 SOC: ~700 alerts triaged a month',
+    '> Security automation that cut alert handling by 80%',
+    '> 13 vulnerabilities exploited across 10+ OWASP categories'
   ];
   var el = document.getElementById('typewriter');
   var cursor = el.querySelector('.cursor');
@@ -527,3 +542,5 @@
   }
 })();
 </script>
+</body>
+</html>

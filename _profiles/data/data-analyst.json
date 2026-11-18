@@ -1,0 +1,92 @@
+{
+  "slug": "data-analyst",
+  "title": "Data Analyst",
+  "tagline": ["SQL", "Python", "Log & Event Data Analysis", "Data Cleaning", "Reporting"],
+  "intro": "I turn log and event data into root causes, clear reports and faster decisions, using SQL and Python.",
+  "resume_url": "https://drive.google.com/file/d/1XRqiY1sQlCfc377CzvD4wBJz6SFS3Q3Q/view?usp=drive_link",
+  "show_linkedin": false,
+  "metrics": [
+    { "value": "~700", "label": "events analysed a month" },
+    { "value": "4", "label": "platforms combined" },
+    { "value": "80%", "label": "faster alert workflow" },
+    { "value": "90%", "label": "faster bulk operations" }
+  ],
+  "comparisons": [
+    { "name": "Alert handling", "before": 15, "after": 3, "gain": "80% faster" },
+    { "name": "Bulk account operations", "before": 30, "after": 3, "gain": "90% faster" }
+  ],
+  "sources": [
+    { "name": "Entra ID", "domain": "Identity" },
+    { "name": "Proofpoint", "domain": "Email" },
+    { "name": "CrowdStrike", "domain": "Endpoint" },
+    { "name": "ServiceNow", "domain": "Tickets" }
+  ],
+  "skills": [
+    { "name": "Querying", "items": ["SQL", "Google SecOps UDM search", "SIEM query languages"] },
+    { "name": "Python for Data", "items": ["pandas", "scikit-learn", "data cleaning", "feature preparation"] },
+    { "name": "Analysis", "items": ["trend analysis", "root-cause analysis", "pattern detection in large event datasets"] },
+    { "name": "Reporting", "items": ["ServiceNow dashboards", "Excel", "RCA reports"] },
+    { "name": "Tools", "items": ["Git", "PowerShell", "REST APIs", "MongoDB"] }
+  ],
+  "experience": [
+    {
+      "role": "Data Analyst – Security & Operations Data",
+      "company": "Tietoevry India Pvt Ltd",
+      "location": "Gurugram",
+      "dates": "Aug 2024 – Oct 2026",
+      "groups": [
+        {
+          "title": "",
+          "bullets": [
+            "Analysed **30–40 operational and security events a day (~700 a month)** across email, identity and endpoint data sources in a 24x7 environment.",
+            "Queried large log datasets with Google SecOps UDM searches to trace brute-force and password-spraying patterns to source IPs and list every affected user.",
+            "Root-caused recurring account lockouts to **3 sources** (cached credentials, Citrix profiles, Cisco ISE Wi-Fi) by correlating sign-in, device and network data.",
+            "Combined data from **4 platforms** (Entra ID, Proofpoint, CrowdStrike, ServiceNow) to build a single view of each case and speed up decisions.",
+            "Documented findings in structured tickets and RCA reports with evidence for every action."
+          ]
+        }
+      ],
+      "achievements": [
+        "Automated a data-heavy alert workflow in Python, cutting handling time from **~15 to ~3 minutes (80% faster)**.",
+        "Replaced **~30 minutes of manual data lookups and actions with a ~3-minute script (90% faster)** for bulk account operations."
+      ]
+    },
+    {
+      "role": "Freelance Usability Tester",
+      "company": "UserTesting.com",
+      "location": "",
+      "dates": "Feb 2022 – Aug 2024",
+      "groups": [
+        {
+          "title": "",
+          "bullets": [
+            "Completed paid usability and feedback tests evaluating websites and applications, providing structured, detailed feedback under platform confidentiality terms.",
+            "Completed **25+ tests**, maintaining a consistent quality and completion record."
+          ]
+        }
+      ],
+      "achievements": []
+    }
+  ],
+  "projects": [
+    {
+      "key": "sdg",
+      "tags": ["Python", "scikit-learn", "FastAPI"],
+      "bullets": [
+        "Collected, cleaned and labelled a text dataset.",
+        "Engineered TF-IDF features and evaluated a classifier over 15 rounds to reach **98.5% precision and recall**."
+      ]
+    },
+    {
+      "key": "noc",
+      "tags": ["Python", "APIs"],
+      "bullets": ["Merges alert data with **3 external data sources** (site directory, manager lookup, weather API) to produce enriched notifications."]
+    },
+    {
+      "key": "fruit",
+      "tags": ["Flask", "Python"],
+      "bullets": ["Logged **13 findings** in a structured dataset with CWE mapping, severity and root cause."]
+    }
+  ],
+  "certificates": ["python", "internships", "security"]
+}
