@@ -121,3 +121,6 @@ strong{color:var(--ink);font-weight:600;}
   .l::before{width:18px;}
   .sb-right{display:none;}
 }
+@media (max-width:380px){
+  .tb-status{font-size:0;gap:0;}
+}

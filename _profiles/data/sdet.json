@@ -3,7 +3,7 @@
   "title": "SDET",
   "tagline": ["Test Automation", "API Testing", "Security Testing", "Python", "CI/CD"],
   "intro": "I design, build and test automation in Python and PowerShell, covering failure paths, API integrations and web application security.",
-  "resume_url": "https://drive.google.com/file/d/1w16ZoLhBtQPsL9_IGlpdGsKBTIjuJkCu/view?usp=drive_link",
+  "resume_url": "https://drive.google.com/file/d/1Y2sZfK71ML-U17yE8WSQdfxmQaIVEVj6/view?usp=sharing",
   "show_linkedin": false,
   "metrics": [
     { "value": "0", "label": "missed alerts" },
