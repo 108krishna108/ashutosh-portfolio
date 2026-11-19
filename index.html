@@ -194,7 +194,7 @@
       <a href="projects.html">projects</a>
       <a href="certifications.html">certs</a>
     </div>
-    <div style="display:flex;gap:.6rem;flex:none;"><a class="nav-cta" href="https://drive.google.com/file/d/1Ah4IWliFc66a4KJemDsju9tHgjPfkNK6/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume_</a><a class="nav-cta" href="contact.html">contact_</a></div>
+    <div style="display:flex;gap:.6rem;flex:none;"><a class="nav-cta" href="https://drive.google.com/file/d/1jHr9QUFqOrrN0jSSYKqFN7DkyI1jLmSh/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume_</a><a class="nav-cta" href="contact.html">contact_</a></div>
   </div>
 </nav>
 
@@ -203,10 +203,10 @@
     <div class="hero-content reveal">
       <div class="sys-status">[ SYSTEM ONLINE · AVAILABLE IMMEDIATELY ]</div>
       <h1 class="glitch" data-text="ASHUTOSH_KUMAR">ASHUTOSH_KUMAR</h1>
-      <div class="role-line">SOC Analyst — Incident Response · Threat Hunting · Phishing &amp; Identity Defense · Security Automation</div>
+      <div class="role-line">SOC Analyst — Incident Response · Threat Hunting · Penetration Testing (VAPT) · Security Automation</div>
       <p id="typewriter"><span class="cursor">&nbsp;</span></p>
       <div class="btn-group">
-        <a class="btn-neon" href="https://drive.google.com/file/d/1Ah4IWliFc66a4KJemDsju9tHgjPfkNK6/view?usp=sharing" target="_blank" rel="noopener noreferrer">VIEW_RESUME</a>
+        <a class="btn-neon" href="https://drive.google.com/file/d/1jHr9QUFqOrrN0jSSYKqFN7DkyI1jLmSh/view?usp=sharing" target="_blank" rel="noopener noreferrer">VIEW_RESUME</a>
         <a class="btn-ghost" href="#contact">CONTACT_ME</a>
       </div>
     </div>
@@ -249,7 +249,7 @@
       <div class="skill-group">
         <h4>detection_and_siem</h4>
         <div class="badge-row">
-          <span class="badge">Google SecOps (Chronicle UDM)</span><span class="badge">Microsoft Sentinel</span><span class="badge">CrowdStrike Next-Gen SIEM</span><span class="badge">IBM QRadar</span><span class="badge">Threat Hunting</span>
+          <span class="badge">Google SecOps (Chronicle UDM)</span><span class="badge">Microsoft Sentinel</span><span class="badge">CrowdStrike NG-SIEM</span><span class="badge">IBM QRadar</span><span class="badge">Threat Hunting</span>
         </div>
       </div>
       <div class="skill-group">
@@ -268,6 +268,18 @@
         <h4>response_and_intel</h4>
         <div class="badge-row">
           <span class="badge">ReliaQuest GreyMatter</span><span class="badge">ServiceNow</span><span class="badge">Palo Alto EDL</span><span class="badge">VirusTotal</span><span class="badge">AbuseIPDB</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>penetration_testing</h4>
+        <div class="badge-row">
+          <span class="badge">Burp Suite</span><span class="badge">OWASP ZAP</span><span class="badge">Nikto</span><span class="badge">sqlmap</span><span class="badge">Metasploit</span><span class="badge">Nmap</span><span class="badge">Wireshark</span><span class="badge">nslookup</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>vapt_and_appsec</h4>
+        <div class="badge-row">
+          <span class="badge">SQL Injection</span><span class="badge">XSS</span><span class="badge">CSRF</span><span class="badge">IDOR</span><span class="badge">SSRF</span><span class="badge">Broken Access Control</span><span class="badge">Insecure File Upload</span>
         </div>
       </div>
       <div class="skill-group">
@@ -295,7 +307,7 @@
         <h3>Security Analyst (SOC) <span class="co">— Tietoevry India Pvt Ltd</span></h3>
         <p class="tl-sub">Incident Response &amp; Investigations</p>
         <ul>
-          <li>Monitored a 24x7 SOC for 2 years, triaging <strong>30–40 alerts a day (~700 a month)</strong> from ReliaQuest GreyMatter and ServiceNow across phishing, identity, MFA-fatigue and endpoint detections; escalated true positives and closed within SLA.</li>
+          <li>Monitored a 24x7 SOC for 2 years, triaging <strong>30–40 alerts a day (~700 a month)</strong> from ReliaQuest GreyMatter and ServiceNow across phishing, identity, MFA-fatigue and endpoint detections; escalated and closed within SLA.</li>
           <li>Ran phishing and BEC investigations end to end across 4 tools: traced senders and recipients in Proofpoint, purged malicious mail with Abnormal Security, detonated attachments in CrowdStrike Sandbox and confirmed who clicked or opened them in Next-Gen SIEM.</li>
           <li>Investigated account compromise through 4 signals (Entra ID sign-ins, new devices, MFA methods, inbox forwarding rules); contained confirmed cases in 3 steps: password reset, session revocation and removal of attacker devices.</li>
           <li>Investigated EDR alerts such as Office apps spawning executables: pulled process trees and hashes from CrowdStrike, traced the infection vector (email or browser), then remediated over RTR and ran a full scan.</li>
@@ -305,8 +317,13 @@
           <li>Wrote Google SecOps UDM hunting queries to trace brute-force and password-spraying attacks to the source IP and list every affected user.</li>
           <li>Root-caused repeated account lockouts to 3 sources (cached credentials, Citrix profiles, Cisco ISE Wi-Fi), stopping recurring tickets.</li>
           <li>Blocked 4 types of IOCs (IPs, domains, senders, file hashes) across 3 platforms (Palo Alto EDL, Proofpoint, GreyMatter), each backed by a change request and ticket evidence.</li>
-          <li>Started as NOC Engineer (Aug–Sep 2024); supported senior testers on VAPT of live web applications.</li>
         </ul>
+        <p class="tl-sub">Penetration Testing (VAPT)</p>
+        <ul>
+          <li>Supported senior testers on VAPT of live web applications: tested for OWASP Top 10 issues (SQLi, XSS, CSRF, IDOR, SSRF, broken access control) with Burp Suite, and helped write up the findings.</li>
+          <li>Used Nmap, Wireshark and nslookup for reconnaissance and traffic analysis during testing and SOC investigations.</li>
+        </ul>
+        <p style="margin-top:.8rem;opacity:.75;font-size:.9rem;">Started as NOC Engineer (Aug–Sep 2024).</p>
         <p class="tl-sub">Key achievements</p>
         <ul>
           <li>Built a NOC Auto-Responder (Python, IMAP, Gemini) that cut alert handling from <strong>~15 to ~3 minutes (80% faster)</strong>, with a template fallback so no alert is missed.</li>
@@ -344,7 +361,7 @@
         <div class="proj-body">
           <h3>Fruit-Store-Pentest</h3>
           <ul>
-            <li>Designed and built a complete Flask e-commerce application, then independently introduced and exploited 13 real vulnerability instances spanning 10+ OWASP Top 10 categories — SQL injection, stored/reflected XSS, IDOR, CSRF, SSRF, broken access control, insecure file upload, and weak password hashing.</li>
+            <li>Designed, built and pentested a complete Flask e-commerce application with Burp Suite, sqlmap and OWASP ZAP, independently introducing and exploiting 13 real vulnerability instances spanning 10+ OWASP Top 10 categories — SQL injection, stored/reflected XSS, IDOR, CSRF, SSRF, broken access control, insecure file upload, and weak password hashing.</li>
             <li>Chained a mass-assignment privilege-escalation flaw with an admin-only SSRF endpoint to demonstrate a full multi-step compromise path from a low-privilege account, mirroring a real-world attack chain.</li>
             <li>Remediated every finding on a parallel patched branch and documented root cause, proof-of-concept, CWE classification, and fix for each vulnerability.</li>
           </ul>
@@ -446,7 +463,7 @@
         <p><a href="mailto:ashutoshkumar37408@gmail.com">ashutoshkumar37408@gmail.com</a></p>
         <p><a href="https://github.com/108krishna108" target="_blank" rel="noopener noreferrer">github.com/108krishna108</a></p>
         <p><a href="https://www.linkedin.com/in/contactashutoshkumarakdev" target="_blank" rel="noopener noreferrer">linkedin.com/in/contactashutoshkumarakdev</a></p>
-        <p><a href="https://drive.google.com/file/d/1Ah4IWliFc66a4KJemDsju9tHgjPfkNK6/view?usp=sharing" target="_blank" rel="noopener noreferrer">View full résumé (PDF) ↗</a></p>
+        <p><a href="https://drive.google.com/file/d/1jHr9QUFqOrrN0jSSYKqFN7DkyI1jLmSh/view?usp=sharing" target="_blank" rel="noopener noreferrer">View full résumé (PDF) ↗</a></p>
       </div>
     </div>
   </section>

@@ -191,7 +191,7 @@
       <a href="projects.html">Projects</a>
       <a href="certifications.html">Certifications</a>
     </div>
-    <div style="display:flex;gap:.6rem;flex:none;"><a class="nav-cta" href="https://drive.google.com/file/d/1Ah4IWliFc66a4KJemDsju9tHgjPfkNK6/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a><a class="nav-cta" href="contact.html">Contact</a></div>
+    <div style="display:flex;gap:.6rem;flex:none;"><a class="nav-cta" href="https://drive.google.com/file/d/1jHr9QUFqOrrN0jSSYKqFN7DkyI1jLmSh/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a><a class="nav-cta" href="contact.html">Contact</a></div>
   </div>
 </nav>
 
@@ -209,7 +209,7 @@
         <h3>Security Analyst (SOC)<span class="co">Tietoevry India Pvt Ltd</span></h3>
         <p class="tl-sub">Incident Response &amp; Investigations</p>
         <ul>
-          <li>Monitored a 24x7 SOC for 2 years, triaging <strong>30–40 alerts a day (~700 a month)</strong> from ReliaQuest GreyMatter and ServiceNow across phishing, identity, MFA-fatigue and endpoint detections; escalated true positives and closed within SLA.</li>
+          <li>Monitored a 24x7 SOC for 2 years, triaging <strong>30–40 alerts a day (~700 a month)</strong> from ReliaQuest GreyMatter and ServiceNow across phishing, identity, MFA-fatigue and endpoint detections; escalated and closed within SLA.</li>
           <li>Ran phishing and BEC investigations end to end across 4 tools: traced senders and recipients in Proofpoint, purged malicious mail with Abnormal Security, detonated attachments in CrowdStrike Sandbox and confirmed who clicked or opened them in Next-Gen SIEM.</li>
           <li>Investigated account compromise through 4 signals (Entra ID sign-ins, new devices, MFA methods, inbox forwarding rules); contained confirmed cases in 3 steps: password reset, session revocation and removal of attacker devices.</li>
           <li>Investigated EDR alerts such as Office apps spawning executables: pulled process trees and hashes from CrowdStrike, traced the infection vector (email or browser), then remediated over RTR and ran a full scan.</li>
@@ -219,15 +219,20 @@
           <li>Wrote Google SecOps UDM hunting queries to trace brute-force and password-spraying attacks to the source IP and list every affected user.</li>
           <li>Root-caused repeated account lockouts to 3 sources (cached credentials, Citrix profiles, Cisco ISE Wi-Fi), stopping recurring tickets.</li>
           <li>Blocked 4 types of IOCs (IPs, domains, senders, file hashes) across 3 platforms (Palo Alto EDL, Proofpoint, GreyMatter), each backed by a change request and ticket evidence.</li>
-          <li>Started as NOC Engineer (Aug–Sep 2024); supported senior testers on VAPT of live web applications.</li>
         </ul>
+        <p class="tl-sub">Penetration Testing (VAPT)</p>
+        <ul>
+          <li>Supported senior testers on VAPT of live web applications: tested for OWASP Top 10 issues (SQLi, XSS, CSRF, IDOR, SSRF, broken access control) with Burp Suite, and helped write up the findings.</li>
+          <li>Used Nmap, Wireshark and nslookup for reconnaissance and traffic analysis during testing and SOC investigations.</li>
+        </ul>
+        <p style="margin-top:.8rem;opacity:.75;font-size:.9rem;">Started as NOC Engineer (Aug–Sep 2024).</p>
         <p class="tl-sub">Key achievements</p>
         <ul>
           <li>Built a NOC Auto-Responder (Python, IMAP, Gemini) that cut alert handling from <strong>~15 to ~3 minutes (80% faster)</strong>, with a template fallback so no alert is missed.</li>
           <li>Automated bulk account unlocks in PowerShell, turning <strong>~30 minutes of manual work into a ~3-minute run (90% faster)</strong>.</li>
         </ul>
         <div class="chip-row">
-          <span class="chip">Google SecOps</span><span class="chip">CrowdStrike Falcon</span><span class="chip">Proofpoint</span><span class="chip">Entra ID</span><span class="chip">GreyMatter</span><span class="chip">ServiceNow</span><span class="chip">Palo Alto EDL</span><span class="chip">Python</span>
+          <span class="chip">Google SecOps</span><span class="chip">CrowdStrike Falcon</span><span class="chip">Proofpoint</span><span class="chip">Entra ID</span><span class="chip">GreyMatter</span><span class="chip">ServiceNow</span><span class="chip">Palo Alto EDL</span><span class="chip">Burp Suite</span><span class="chip">Nmap</span><span class="chip">Python</span>
         </div>
       </div>
     </div>
